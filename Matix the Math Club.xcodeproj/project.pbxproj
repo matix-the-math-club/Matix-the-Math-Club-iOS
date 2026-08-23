@@ -1,0 +1,252 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA1F576266954906B7E93337 /* MatixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D053CFCFC04963BE31BE82 /* MatixApp.swift */; };
+		ECC27444549746CBBD913F71 /* WebShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AC74C2A0C4B53B24B5E3F /* WebShell.swift */; };
+		82D44B40E84544068461763C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E09D001E980E4EA59EC2A995 /* Assets.xcassets */; };
+		30AC5BF4DC9C456693C3CFF2 /* app.html in Resources */ = {isa = PBXBuildFile; fileRef = B14855083AC6415195456221 /* app.html */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A10780B17FF404DB4A0D529 /* Matix the Math Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matix the Math Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4D053CFCFC04963BE31BE82 /* MatixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatixApp.swift; sourceTree = "<group>"; };
+		CC4AC74C2A0C4B53B24B5E3F /* WebShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebShell.swift; sourceTree = "<group>"; };
+		E09D001E980E4EA59EC2A995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B14855083AC6415195456221 /* app.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = app.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCD1AE40EF424DEABFC047B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		735B1CF9DC204DBFB06FA6A9 = {
+			isa = PBXGroup;
+			children = (
+				EC36E71AA7CD428495C1ED2F /* Matix the Math Club */,
+				F01C494D63FD494EB3CA47B4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F01C494D63FD494EB3CA47B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A10780B17FF404DB4A0D529 /* Matix the Math Club.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC36E71AA7CD428495C1ED2F /* Matix the Math Club */ = {
+			isa = PBXGroup;
+			children = (
+				C4D053CFCFC04963BE31BE82 /* MatixApp.swift */,
+				CC4AC74C2A0C4B53B24B5E3F /* WebShell.swift */,
+				E09D001E980E4EA59EC2A995 /* Assets.xcassets */,
+				B14855083AC6415195456221 /* app.html */,
+			);
+			path = "Matix the Math Club";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B90664344138440D80BED441 /* Matix the Math Club */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 153A3B2452304201972A9739 /* Build configuration list for PBXNativeTarget "Matix the Math Club" */;
+			buildPhases = (
+				4931E1D01E364203947F172D /* Sources */,
+				DCD1AE40EF424DEABFC047B1 /* Frameworks */,
+				23FA120C0AA64F17B74D27C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Matix the Math Club";
+			productName = "Matix the Math Club";
+			productReference = 2A10780B17FF404DB4A0D529 /* Matix the Math Club.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		142EE1FF2E2C4BF8BE05E047 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+			};
+			buildConfigurationList = 1AF22F481442430BBB4FAE9D /* Build configuration list for PBXProject "Matix the Math Club" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 735B1CF9DC204DBFB06FA6A9;
+			productRefGroup = F01C494D63FD494EB3CA47B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B90664344138440D80BED441 /* Matix the Math Club */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23FA120C0AA64F17B74D27C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82D44B40E84544068461763C /* Assets.xcassets in Resources */,
+				30AC5BF4DC9C456693C3CFF2 /* app.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4931E1D01E364203947F172D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA1F576266954906B7E93337 /* MatixApp.swift in Sources */,
+				ECC27444549746CBBD913F71 /* WebShell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5FEA0A56D53E4FC0A7609FCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		91D42E03511549BD9A6822DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				SWIFT_VERSION = 5.0;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BC140A51B274FAE876B782F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Matix the Math Club";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = club.matix.mathclub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Matix uses the camera for club video calls.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Matix uses the microphone for club video calls.";
+				SWIFT_VERSION = 5.0;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F54A49F576B4476BBA56C186 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Matix the Math Club";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = club.matix.mathclub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Matix uses the camera for club video calls.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Matix uses the microphone for club video calls.";
+				SWIFT_VERSION = 5.0;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AF22F481442430BBB4FAE9D /* Build configuration list for PBXProject "Matix the Math Club" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FEA0A56D53E4FC0A7609FCE /* Debug */,
+				91D42E03511549BD9A6822DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		153A3B2452304201972A9739 /* Build configuration list for PBXNativeTarget "Matix the Math Club" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC140A51B274FAE876B782F /* Debug */,
+				F54A49F576B4476BBA56C186 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 142EE1FF2E2C4BF8BE05E047 /* Project object */;
+}

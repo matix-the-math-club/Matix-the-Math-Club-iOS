@@ -1,0 +1,13 @@
+{
+  "name": "matix-the-math-club-ios",
+  "version": "1.0.0",
+  "description": "Matix the Math Club iOS App",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"Building iOS assets pack locally...\"",
+    "commit": "git add . && git commit -m \"fixed a thing\" && git push origin master"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
