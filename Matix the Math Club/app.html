@@ -1490,18 +1490,39 @@ body.dark .nav-sep{background:rgba(255,255,255,.10)}
 </head>
 <body>
 
-<!-- ========== SIGN IN ========== -->
+<!-- ========== Welcome + sign-in gate (labs.google style) ========== -->
 <div id="gate">
-  <div class="gate-card">
-    <div class="gate-logo" id="gateLogo"></div>
-    <h1 id="gTitle">Sign in to Matix</h1>
-    <p id="gSub">Your math club workspace</p>
-    <div class="fld"><label>Username</label><input id="gUser" placeholder="username" autocomplete="username"></div>
-    <div class="fld"><label>Password</label><input id="gPass" type="password" placeholder="password" autocomplete="current-password"></div>
-    <label class="toggle keep-row" id="gKeepWrap"><input type="checkbox" id="gKeep" checked><span>Keep me signed in on this device</span></label>
-    <div class="err" id="gErr"></div>
-    <button class="btn block" id="gBtn">Sign in</button>
-    <div class="swap" id="gSwap">New to Matix? <a id="gSwapA">Create an account</a></div>
+  <div class="lb-glows"><div class="lb-glow g1"></div><div class="lb-glow g2"></div><div class="lb-glow g3"></div><div class="lb-glow g4"></div></div>
+
+  <div id="gateWelcome" class="gate-welcome">
+    <div class="gate-welcome-inner lb-stagger">
+      <div><span class="lb-eyebrow"><span class="dot"></span>Free math education platform</span></div>
+      <div class="lb-word">MATIX</div>
+      <h1 class="gate-welcome-h">Welcome to Matix</h1>
+      <p class="gate-welcome-lead">Matix is a free, educative math platform for the Math Club. Learn at your own pace, play member-made games, chat with AI tutors, and grow your skills — no paywall, ever.</p>
+      <div class="gate-goals">
+        <div class="gate-goal"><div class="gi">🦉</div><b>Learn anything</b><span>AI lessons explain math from zero, with quizzes that check your understanding.</span></div>
+        <div class="gate-goal"><div class="gi">🎮</div><b>Play &amp; create</b><span>Try club games or publish your own — a creative way to practice math.</span></div>
+        <div class="gate-goal"><div class="gi">✨</div><b>Club community</b><span>Share ideas, earn points, chat with friends, and shape what Matix builds next.</span></div>
+      </div>
+      <button type="button" class="gate-continue" id="gContinue">Continue → Sign in</button>
+      <div class="gate-free-badge">100% free · forever</div>
+    </div>
+  </div>
+
+  <div id="gateAuth" class="gate-auth" style="display:none">
+    <div class="gate-card lb-stagger">
+      <div class="gate-logo" id="gateLogo"></div>
+      <h1 id="gTitle">Sign in to Matix</h1>
+      <p id="gSub">Your free math club workspace</p>
+      <div class="fld"><label for="gUser">Username</label><input id="gUser" type="text" autocomplete="username" placeholder="yourname"></div>
+      <div class="fld"><label for="gPass">Password</label><input id="gPass" type="password" autocomplete="current-password" placeholder="••••••••"></div>
+      <label class="toggle gate-keep"><input type="checkbox" id="gKeep" checked> Keep me signed in on this device</label>
+      <button type="button" class="btn block" id="gBtn">Sign in</button>
+      <div class="err" id="gErr"></div>
+      <div class="swap" id="gSwap">New to Matix? <a id="gSwapA">Create an account</a></div>
+      <button type="button" class="gate-back" id="gBackWelcome">← Back to welcome</button>
+    </div>
   </div>
 </div>
 
@@ -1528,6 +1549,7 @@ body.dark .nav-sep{background:rgba(255,255,255,.10)}
   <div class="tb-acct" id="tbAcct"><div class="tb-avatar" id="tbAv">?</div><div class="u"><b id="tbName">Not signed in</b><span id="tbRole"></span></div></div>
   <button class="set-item" id="profileBtn"><span class="ic">🎨</span><span class="nm">My profile</span><span class="go">›</span></button>
   <button class="set-item" id="tbSignOut"><span class="ic">⏻</span><span class="nm">Sign out</span><span class="go">›</span></button>
+  <button class="set-item" id="tbSignOutAll"><span class="ic">⏻</span><span class="nm">Sign out of all devices</span><span class="go">›</span></button> 
   <h4>Appearance</h4>
   <div class="tb-modes">
     <button class="tb-mode" id="tbLight"><span>☀️</span><span>Light</span></button>
@@ -1717,6 +1739,7 @@ body.dark .tb-panel,body.dark .ws-menu{background:rgba(30,30,38,.9)}
         <div class="avatar" id="sbAv"></div>
         <div class="u"><b id="sbName"></b><span id="sbRole"></span></div>
         <button class="icon-btn" id="signOut" title="Sign out">⏻</button>
+        <button class="icon-btn" id="signOutAll" title="Sign out of all devices">⏻</button>
       </div>
     </aside>
 
@@ -1754,7 +1777,7 @@ body.dark .tb-panel,body.dark .ws-menu{background:rgba(30,30,38,.9)}
 
 <script>
 /* =====================================================================
-   Matix Workspace — single-file Notion-style app
+   Matix Workspace
    Firebase Realtime DB via REST (compatible with existing Matix data)
    ===================================================================== */
 var FB='https://matix-1d538-default-rtdb.firebaseio.com';
@@ -1819,10 +1842,41 @@ function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
 function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function lsDel(k){try{localStorage.removeItem(k);}catch(e){}}
 var KEEP_KEY='mx_keep_user';
+var SESSION_REV_KEY='mx_session_rev';
 function wantsKeep(){var b=$('gKeep');return b?!!b.checked:true;}
 function getUser(){return sessionStorage.getItem('mx_user')||sessionStorage.getItem('matix_auth_user')||lsGet(KEEP_KEY)||null;}
 function setUser(u){sessionStorage.setItem('mx_user',u);sessionStorage.setItem('matix_auth_user',u);if(wantsKeep()){lsSet(KEEP_KEY,u);}else{lsDel(KEEP_KEY);}}
 function clearUser(){sessionStorage.removeItem('mx_user');sessionStorage.removeItem('matix_auth_user');}
+function getLocalSessionRev(u){return Number(sessionStorage.getItem('mx_sess_'+u)||lsGet(SESSION_REV_KEY+'_'+u)||0);}
+function setLocalSessionRev(u,rev){sessionStorage.setItem('mx_sess_'+u,String(rev));if(wantsKeep())lsSet(SESSION_REV_KEY+'_'+u,String(rev));else lsDel(SESSION_REV_KEY+'_'+u);}
+function clearLocalSessionRev(u){sessionStorage.removeItem('mx_sess_'+u);lsDel(SESSION_REV_KEY+'_'+u);}
+function ensureSession(u){
+  return fbGet('/members/'+encodeURIComponent(u)).then(function(m){
+    var rev=(m&&m.sessionRev)?Number(m.sessionRev):0;
+    if(!rev){rev=Date.now();return fbPatch('/members/'+encodeURIComponent(u),{sessionRev:rev}).then(function(){return rev;});}
+    return rev;
+  }).then(function(rev){setLocalSessionRev(u,rev);return rev;});
+}
+function checkSessionValid(u){
+  return fbGet('/members/'+encodeURIComponent(u)).then(function(m){
+    if(!m||!m.sessionRev)return true;
+    var local=getLocalSessionRev(u);
+    if(!local)return true;
+    return local>=Number(m.sessionRev);
+  })['catch'](function(){return true;});
+}
+function bumpSessionRev(u){
+  var rev=Date.now();
+  return fbPatch('/members/'+encodeURIComponent(u),{sessionRev:rev}).then(function(){return rev;});
+}
+function doSignOut(){var u=ME||getUser();clearUser();lsDel(KEEP_KEY);if(u)clearLocalSessionRev(u);location.reload();}
+function doSignOutAll(){
+  if(!ME&&!getUser()){toast('You are not signed in','err');return;}
+  var u=ME||getUser();
+  customConfirm('Sign out of all devices? Every phone, tablet, and browser will need to sign in again.',function(){
+    bumpSessionRev(u).then(function(){clearUser();lsDel(KEEP_KEY);clearLocalSessionRev(u);toast('Signed out everywhere');location.reload();});
+  });
+}
 var ROLE_OWNER=false;
 var LEARN_OWNER_ONLY=true; /* TEMPORARY: Math Learn is owner-only for now. Set this to false to open it back up for everyone. */
 function canUseLearn(){return !LEARN_OWNER_ONLY||isOwner();}
