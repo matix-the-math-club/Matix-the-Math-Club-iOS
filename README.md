@@ -24,8 +24,36 @@ Set your signing team under Signing & Capabilities if Xcode asks.
 Replace app.html inside the "Matix the Math Club" folder with the new file
 and rebuild. Nothing else to change.
 
+<<<<<<< HEAD
 ## app.html lives in the project root
 
 The whole web app is the single file `app.html` in the root of this project.
 That is the file you edit. Run `node sync-app.js` after editing to copy it into
 the platform shell folder. (Android does this automatically through Gradle.)
+=======
+---
+
+## app.html lives in the project root
+
+`app.html` in the root of this project is the **single source of truth** for the
+whole web app. Edit only that file.
+
+The shell actually loads it from `Matix the Math Club/app.html`, so after editing the root file run:
+
+```
+node sync-app.js
+```
+
+### Startup order
+
+1. **Loading screen** - dark, dotted grid, neon-green progress bar
+2. **Welcome screen** - Google Labs style landing page
+3. **Sign in** - only after the user taps "Try it now"
+
+### Editing the landing copy
+
+Sign in as an owner, then use **Edit this screen (owner)** on the welcome screen
+(or the pencil button, bottom-right). Everything - wordmark, headline, cards,
+category pills, social links - is saved to `/siteContent/gate` and applies for
+everyone. No rebuild needed.
+>>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
