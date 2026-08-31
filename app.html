@@ -1490,41 +1490,25 @@ body.dark .nav-sep{background:rgba(255,255,255,.10)}
 <style id="mxLgCss">
 /* ==========================================================================
    MATIX — Google Labs styled landing layer  (reference: labs.google)
-<<<<<<< HEAD
    near-black + dotted grid · neon green · huge light wordmark · cream pill CTA
    full-height scroll-snapped sections · auto-advancing featured carousel
    ========================================================================== */
 :root{
   --lg-bg:#0b0b0c; --lg-bg2:#101012; --lg-panel:#15151a;
   --lg-green:#3ee98f; --lg-green-2:#22c777; --lg-olive:#c9d356;
-=======
-   near-black canvas + dotted grid · neon green accent · huge light wordmark
-   cream pill CTA · tilted white cards · category pills
-   ========================================================================== */
-:root{
-  --lg-bg:#0b0b0c; --lg-bg2:#101012; --lg-panel:#15151a;
-  --lg-green:#3ee98f; --lg-green-2:#22c777;
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
   --lg-cream:#f4f0e7; --lg-ink:#0b0b0c;
   --lg-line:rgba(255,255,255,.13); --lg-line2:rgba(255,255,255,.26);
   --lg-dim:rgba(255,255,255,.66); --lg-dim2:rgba(255,255,255,.44);
   --lg-font:'Google Sans','Product Sans','Google Sans Display',system-ui,-apple-system,'Segoe UI',Roboto,Inter,sans-serif;
   --lg-dots:radial-gradient(rgba(255,255,255,.075) 1px,transparent 1px);
-<<<<<<< HEAD
   --lg-nav-h:66px;
-=======
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 }
 
 /* ---------- keep app chrome hidden while booting ---------- */
 html.mx-booting,html.mx-booting body{background:#0b0b0c !important}
 html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:hidden !important}
 
-<<<<<<< HEAD
 /* ---------- shared dark canvas ---------- */
-=======
-/* ---------- the shared dark canvas ---------- */
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 #mxBoot,#gate{
   background-color:var(--lg-bg) !important;
   background-image:var(--lg-dots) !important;
@@ -1553,7 +1537,6 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 #mxBootDots{margin-top:16px;font-size:.72rem;font-weight:600;letter-spacing:.18em;
   text-transform:uppercase;color:var(--lg-green);opacity:.85}
 
-<<<<<<< HEAD
 /* ========================= SCROLL SNAP / SECTIONS ========================= */
 #gate{position:fixed;inset:0;z-index:9000;overflow-y:auto;overflow-x:hidden;display:block;
   overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
@@ -1592,18 +1575,6 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 
 /* --- decorative tilted collage --- */
 #gate .lg-collage{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:1}
-=======
-/* ============================ WELCOME SCREEN ============================ */
-#gate{position:fixed;inset:0;z-index:9000;overflow-y:auto;display:block}
-#gate #gateWelcome{position:relative;min-height:100%;display:flex;align-items:stretch;
-  justify-content:center;padding:0}
-#gate #gateWelcome .gate-welcome-inner{position:relative;z-index:2;width:100%;max-width:1180px;
-  margin:0 auto;padding:22px 24px 72px;display:flex;flex-direction:column;align-items:center;text-align:center}
-
-/* --- decorative tilted collage behind the hero (labs.google vibe) --- */
-#gate .lg-collage{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-  animation:none !important;opacity:1 !important}
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 #gate .lg-tile{position:absolute;border-radius:16px;filter:blur(1px);opacity:.5;
   box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.07)}
 #gate .lg-tile.t1{left:-4%;top:11%;width:290px;height:180px;transform:rotate(-8deg);
@@ -1620,7 +1591,6 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
   background:linear-gradient(150deg,#0f3b2c,#1c5c43 60%,#0b2a20)}
 @media(max-width:900px){#gate .lg-tile{display:none}}
 
-<<<<<<< HEAD
 /* liquid blob wipe between featured slides (labs.google transition) */
 #gate .lg-blob{position:fixed;left:50%;top:50%;width:52vmax;height:52vmax;z-index:1;
   margin:-26vmax 0 0 -26vmax;pointer-events:none;opacity:0;
@@ -1683,50 +1653,12 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 #gate .lg-slide.is-on .lb-word{animation:mxUp .62s both !important;animation-delay:.09s !important}
 
 /* MATI× brand glyph recoloured for the dark canvas */
-=======
-/* --- top nav --- */
-#gate .lg-nav{width:100%;display:flex;align-items:center;justify-content:space-between;
-  gap:18px;padding:10px 4px 0;margin-bottom:26px}
-#gate .lg-nav-logo{display:flex;align-items:center;gap:10px;font-size:1.12rem;font-weight:500;color:#fff}
-#gate .lg-nav-logo .lg-flask{width:30px;height:30px;border-radius:50%;border:1px solid var(--lg-line2);
-  display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--lg-green)}
-#gate .lg-nav-links{display:flex;align-items:center;gap:30px}
-#gate .lg-nav-links a{color:#fff;font-size:1rem;font-weight:500;cursor:pointer;text-decoration:none;opacity:.92}
-#gate .lg-nav-links a:hover{opacity:1;color:var(--lg-green)}
-#gate .lg-nav-right{display:flex;align-items:center;gap:10px}
-#gate .lg-soc{width:38px;height:38px;border-radius:50%;border:1px solid var(--lg-line);
-  display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;
-  font-weight:700;text-decoration:none;transition:border-color .2s,color .2s}
-#gate .lg-soc:hover{border-color:var(--lg-green);color:var(--lg-green)}
-#gate .lg-nav-signin{background:transparent;border:1px solid var(--lg-line2);color:#fff;
-  border-radius:999px;padding:9px 20px;font-size:.94rem;font-weight:500;cursor:pointer;
-  font-family:inherit;transition:border-color .2s,color .2s}
-#gate .lg-nav-signin:hover{border-color:var(--lg-green);color:var(--lg-green)}
-@media(max-width:820px){#gate .lg-nav-links{display:none}}
-
-/* --- hero --- */
-#gate .lg-hero{width:100%;display:flex;flex-direction:column;align-items:center;
-  padding:44px 0 10px}
-#gate .lb-eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--lg-line);
-  background:rgba(255,255,255,.04);border-radius:999px;padding:8px 18px;font-size:.78rem;
-  font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--lg-dim);margin-bottom:34px}
-#gate .lb-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--lg-green);
-  box-shadow:0 0 10px rgba(62,233,143,.8)}
-
-#gate .lb-word{font-size:clamp(3.4rem,13vw,9rem) !important;font-weight:300 !important;
-  letter-spacing:-.035em !important;line-height:.98 !important;margin:0 0 26px !important;
-  background:none !important;color:#fff !important;animation:none !important;
-  -webkit-background-clip:border-box !important;background-clip:border-box !important}
-
-/* the MATI× brand glyph, recoloured for the dark canvas */
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 #gate .lb-word .mxlogo .lb,#mxBootWord .mxlogo .lb{background:#fff}
 #gate .lb-word .mxlogo .ls,#mxBootWord .mxlogo .ls{background:var(--lg-green)}
 #gate .lb-word .mxlogo .lx,#mxBootWord .mxlogo .lx{color:var(--lg-green)}
 #gate .lb-word .mxlogo .ld,#mxBootWord .mxlogo .ld{background:var(--lg-green)}
 #gate .lb-word .mxlogo .ld.d2,#mxBootWord .mxlogo .ld.d2{background:var(--lg-cream)}
 
-<<<<<<< HEAD
 #gate .gate-welcome-h{font-size:clamp(1.24rem,2.9vw,1.86rem) !important;font-weight:400 !important;
   color:#fff !important;margin:0 0 14px !important;letter-spacing:-.01em;line-height:1.3;max-width:760px}
 #gate .gate-welcome-lead{font-size:clamp(.96rem,1.5vw,1.05rem) !important;color:var(--lg-dim) !important;
@@ -1766,44 +1698,12 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 #gate .gate-goal{position:relative;background:#fff !important;color:#111 !important;border:0 !important;
   border-radius:26px !important;padding:24px 24px 20px !important;text-align:left !important;
   display:flex;flex-direction:column;gap:9px;cursor:pointer;
-=======
-#gate .gate-welcome-h{font-size:clamp(1.3rem,3.1vw,2rem) !important;font-weight:400 !important;
-  color:#fff !important;margin:0 0 16px !important;letter-spacing:-.01em;line-height:1.28;max-width:760px}
-#gate .gate-welcome-lead{font-size:clamp(.98rem,1.6vw,1.08rem) !important;color:var(--lg-dim) !important;
-  line-height:1.66 !important;max-width:640px;margin:0 auto 40px !important}
-
-/* cream pill CTA */
-#gate .gate-continue{background:var(--lg-cream) !important;color:var(--lg-ink) !important;
-  border:0 !important;border-radius:999px !important;padding:20px 52px !important;
-  font-size:1.1rem !important;font-weight:500 !important;font-family:inherit;cursor:pointer;
-  box-shadow:0 10px 34px rgba(0,0,0,.45) !important;transition:transform .18s ease,box-shadow .18s ease}
-#gate .gate-continue:hover{transform:translateY(-2px);box-shadow:0 16px 42px rgba(0,0,0,.55) !important}
-#gate .gate-continue:active{transform:translateY(0)}
-#gate .gate-free-badge{margin-top:20px;color:var(--lg-dim2) !important;background:none !important;
-  border:0 !important;font-size:.86rem;font-weight:500;letter-spacing:.02em}
-
-/* --- category pills (functional filter) --- */
-#gate .lg-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:52px 0 30px}
-#gate .lg-pill{background:#1c1c1f;border:1px solid transparent;color:#fff;border-radius:999px;
-  padding:13px 30px;font-size:1rem;font-weight:500;cursor:pointer;font-family:inherit;
-  transition:background .2s,color .2s}
-#gate .lg-pill:hover{background:#26262b}
-#gate .lg-pill.on{background:var(--lg-green);color:var(--lg-ink)}
-
-/* --- tilted white cards --- */
-#gate .gate-goals{display:grid !important;grid-template-columns:repeat(auto-fit,minmax(268px,1fr)) !important;
-  gap:26px !important;width:100%;max-width:1080px;margin:0 auto !important;padding:14px 6px 0}
-#gate .gate-goal{background:#fff !important;color:#111 !important;border:0 !important;
-  border-radius:26px !important;padding:26px 26px 22px !important;text-align:left !important;
-  display:flex;flex-direction:column;gap:10px;cursor:pointer;
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
   box-shadow:0 22px 48px rgba(0,0,0,.5) !important;
   transition:transform .26s cubic-bezier(.2,.7,.3,1),box-shadow .26s ease}
 #gate .gate-goal:nth-child(3n+1){transform:rotate(-2.1deg)}
 #gate .gate-goal:nth-child(3n+2){transform:rotate(1.5deg)}
 #gate .gate-goal:nth-child(3n+3){transform:rotate(-1deg)}
 #gate .gate-goal:hover{transform:rotate(0deg) translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,.6) !important}
-<<<<<<< HEAD
 #gate .gate-goal .gi{font-size:1.85rem;line-height:1;margin-bottom:4px}
 #gate .gate-goal b{color:#0b0b0c !important;font-size:1.24rem;font-weight:500;letter-spacing:-.01em}
 #gate .gate-goal span{color:#4a4a4f !important;font-size:.95rem;line-height:1.55}
@@ -1831,30 +1731,12 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 #gate .lg-link svg{width:17px;height:17px;fill:currentColor;display:block}
 #gate .gate-edit{margin-top:34px;background:transparent;border:1px dashed var(--lg-line2);
   color:var(--lg-dim);border-radius:999px;padding:11px 22px;font-size:.87rem;font-weight:500;
-=======
-#gate .gate-goal .gi{font-size:1.9rem;line-height:1;margin-bottom:6px}
-#gate .gate-goal b{color:#0b0b0c !important;font-size:1.28rem;font-weight:500;letter-spacing:-.01em}
-#gate .gate-goal span{color:#4a4a4f !important;font-size:.97rem;line-height:1.56}
-#gate .gate-goal .gg-cta{margin-top:auto;padding-top:14px;color:#0b0b0c;font-size:.95rem;
-  font-weight:500;display:inline-flex;align-items:center;gap:7px}
-#gate .gate-goal:hover .gg-cta{color:var(--lg-green-2)}
-#gate .gate-goal .gg-tag{position:absolute;opacity:0;pointer-events:none}
-
-/* --- owner edit affordance --- */
-#gate .gate-edit{margin-top:40px;background:transparent;border:1px dashed var(--lg-line2);
-  color:var(--lg-dim);border-radius:999px;padding:11px 22px;font-size:.88rem;font-weight:500;
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
   cursor:pointer;font-family:inherit}
 #gate .gate-edit:hover{border-color:var(--lg-green);color:var(--lg-green)}
 
 /* ============================== AUTH SCREEN ============================== */
-<<<<<<< HEAD
 #gate #gateAuth{position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;
   justify-content:center;padding:40px 22px;z-index:3}
-=======
-#gate #gateAuth{position:relative;min-height:100%;display:flex;align-items:center;
-  justify-content:center;padding:40px 22px;z-index:2}
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 #gate #gateAuth .gate-card{background:var(--lg-panel) !important;border:1px solid var(--lg-line) !important;
   border-radius:28px !important;padding:40px 34px 30px !important;width:100%;max-width:440px;
   box-shadow:0 30px 80px rgba(0,0,0,.6) !important;text-align:center;color:#fff !important;
@@ -1862,19 +1744,11 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 #gate #gateAuth .gate-logo{margin:0 auto 20px !important;width:56px;height:56px;border-radius:16px;
   border:1px solid var(--lg-line2) !important;background:rgba(255,255,255,.04) !important;
   display:flex;align-items:center;justify-content:center;color:#fff !important}
-<<<<<<< HEAD
 #gate #gateAuth #gTitle{color:#fff !important;font-size:1.7rem !important;font-weight:400 !important;
   margin:0 0 8px !important;letter-spacing:-.015em;background:none !important;-webkit-text-fill-color:currentColor}
 #gate #gateAuth #gSub{color:var(--lg-dim) !important;font-size:.97rem !important;margin:0 0 30px !important}
 #gate #gateAuth .fld{text-align:left;margin-bottom:18px}
 #gate #gateAuth .fld label{display:block;color:var(--lg-dim) !important;font-size:.81rem;
-=======
-#gate #gateAuth #gTitle{color:#fff !important;font-size:1.72rem !important;font-weight:400 !important;
-  margin:0 0 8px !important;letter-spacing:-.015em;background:none !important;-webkit-text-fill-color:currentColor}
-#gate #gateAuth #gSub{color:var(--lg-dim) !important;font-size:.98rem !important;margin:0 0 30px !important}
-#gate #gateAuth .fld{text-align:left;margin-bottom:18px}
-#gate #gateAuth .fld label{display:block;color:var(--lg-dim) !important;font-size:.82rem;
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
   font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:9px}
 #gate #gateAuth .fld input{width:100%;box-sizing:border-box;background:#0d0d0f !important;
   border:1px solid var(--lg-line) !important;color:#fff !important;border-radius:14px !important;
@@ -1884,7 +1758,6 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 #gate #gateAuth .fld input:focus{border-color:var(--lg-green) !important;
   box-shadow:0 0 0 3px rgba(62,233,143,.16) !important}
 #gate #gateAuth .gate-keep{display:flex;align-items:center;gap:10px;justify-content:flex-start;
-<<<<<<< HEAD
   color:var(--lg-dim) !important;font-size:.91rem;margin:4px 0 24px;cursor:pointer}
 #gate #gateAuth .gate-keep input{accent-color:var(--lg-green);width:17px;height:17px;cursor:pointer}
 #gate #gateAuth #gBtn{width:100%;background:var(--lg-cream) !important;color:var(--lg-ink) !important;
@@ -2003,56 +1876,10 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 @keyframes mxUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .mx-reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .mx-reveal.mx-in{opacity:1;transform:none}
-=======
-  color:var(--lg-dim) !important;font-size:.92rem;margin:4px 0 24px;cursor:pointer}
-#gate #gateAuth .gate-keep input{accent-color:var(--lg-green);width:17px;height:17px;cursor:pointer}
-#gate #gateAuth #gBtn{width:100%;background:var(--lg-cream) !important;color:var(--lg-ink) !important;
-  border:0 !important;border-radius:999px !important;padding:17px 20px !important;font-size:1.04rem !important;
-  font-weight:500 !important;font-family:inherit;cursor:pointer;transition:transform .16s ease}
-#gate #gateAuth #gBtn:hover{transform:translateY(-2px)}
-#gate #gateAuth .err{color:#ff8a8a !important;font-size:.9rem;min-height:20px;margin-top:12px}
-#gate #gateAuth .swap{color:var(--lg-dim) !important;font-size:.94rem;margin-top:8px}
-#gate #gateAuth .swap a{color:var(--lg-green) !important;font-weight:500;cursor:pointer;text-decoration:none}
-#gate #gateAuth .swap a:hover{text-decoration:underline}
-#gate #gateAuth .gate-back{margin-top:22px;background:transparent !important;border:0 !important;
-  color:var(--lg-dim2) !important;font-size:.9rem;cursor:pointer;font-family:inherit;padding:8px}
-#gate #gateAuth .gate-back:hover{color:#fff !important}
-
-/* ============================ OWNER CONTENT EDITOR ============================ */
-.mxsc-wrap{display:flex;flex-direction:column;gap:14px}
-.mxsc-card{border:1px solid rgba(0,0,0,.1);border-radius:14px;padding:14px;background:rgba(0,0,0,.02)}
-.mxsc-hd{font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
-  opacity:.6;margin-bottom:10px}
-.mxsc-row{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
-.mxsc-row label{font-size:.8rem;font-weight:600;opacity:.7}
-.mxsc-row input,.mxsc-row textarea{width:100%;box-sizing:border-box;border:1px solid rgba(0,0,0,.16);
-  border-radius:10px;padding:10px 12px;font:inherit;font-size:.95rem}
-.mxsc-row textarea{min-height:70px;resize:vertical}
-.mxsc-grid{display:grid;grid-template-columns:70px 1fr;gap:10px}
-.mxsc-del{background:transparent;border:0;color:#c0392b;font-size:.85rem;font-weight:600;cursor:pointer;padding:4px}
-.mxsc-err{color:#c0392b;font-size:.9rem;min-height:18px}
-
-/* ================================ MOTION ================================ */
-@keyframes mxUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-#gate .lb-stagger>*{animation:mxUp .6s both}
-#gate .lb-stagger>*:nth-child(1){animation-delay:.04s}
-#gate .lb-stagger>*:nth-child(2){animation-delay:.11s}
-#gate .lb-stagger>*:nth-child(3){animation-delay:.18s}
-#gate .lb-stagger>*:nth-child(4){animation-delay:.25s}
-#gate .lb-stagger>*:nth-child(5){animation-delay:.32s}
-#gate .lb-stagger>*:nth-child(6){animation-delay:.39s}
-#gate .lb-stagger>*:nth-child(7){animation-delay:.46s}
-#gate .lb-stagger>.lg-collage{animation:none !important}
-.mx-reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.mx-reveal.mx-in{opacity:1;transform:none}
-
-/* focus rings */
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 #gate button:focus-visible,#gate a:focus-visible,#gate input:focus-visible{
   outline:2px solid var(--lg-green);outline-offset:3px}
 
 @media(prefers-reduced-motion:reduce){
-<<<<<<< HEAD
   #gate.lg-snap{scroll-behavior:auto}
   #gate .lg-slide.is-on>*,#gate .lg-slide.is-on .lb-word,#mxBoot .lg-mark,
   #gate .lg-hint,#gate .lg-blob.go{animation:none !important}
@@ -2077,26 +1904,247 @@ body.reduce-motion #gate .lg-blob{display:none}
 }
 /* short viewports: let a tall cards section scroll instead of clipping */
 @media(max-height:620px){.lg-sec{min-height:auto;padding-top:calc(var(--lg-nav-h) + 22px)}}
-=======
-  #gate .lb-stagger>*,#mxBoot .lg-mark{animation:none !important}
-  .mx-reveal{opacity:1;transform:none;transition:none}
-}
-body.reduce-motion #gate .lb-stagger>*{animation:none !important}
-
-@media(max-width:640px){
-  #gate #gateWelcome .gate-welcome-inner{padding:18px 18px 56px}
-  #gate .lg-hero{padding:26px 0 6px}
-  #gate .lb-eyebrow{margin-bottom:24px;padding:7px 14px;font-size:.7rem}
-  #gate .gate-continue{padding:17px 38px !important;font-size:1.02rem !important;width:100%;max-width:340px}
-  #gate .gate-goals{grid-template-columns:1fr !important;gap:18px !important}
-  #gate .gate-goal{transform:none !important}
-  #gate .lg-pills{margin:36px 0 22px;gap:9px}
-  #gate .lg-pill{padding:11px 20px;font-size:.92rem}
-  #gate #gateAuth .gate-card{padding:30px 22px 24px !important}
-}
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 </style>
 <script>try{document.documentElement.classList.add('mx-booting');}catch(e){}</script>
+<style id="mxAppCss">
+/* ======================================================================
+   MAIN APP SCREEN - labs.google theme (everything behind sign-in)
+   Loaded last so it wins over the old purple/white theme and body.dark.
+   ====================================================================== */
+body,body.dark{
+  --bg:#0b0b0c; --card:#15151a; --sidebar:#0e0e10; --sidebar2:#1a1a20;
+  --text:#f4f0e7; --muted:rgba(255,255,255,.62);
+  --border:rgba(255,255,255,.13); --hover:rgba(255,255,255,.06); --soft:#101012;
+  --brand:#3ee98f; --brand2:#22c777; --accent:#c9d356;
+  --blue:#3ee98f; --blue-soft:rgba(62,233,143,.12); --green:#3ee98f;
+  --radius:12px;
+  --shadow:0 1px 2px rgba(0,0,0,.5),0 18px 44px rgba(0,0,0,.55);
+}
+body,body.dark{
+  background:#0b0b0c;
+  color:var(--text);
+  font-family:'Google Sans','Product Sans','Google Sans Display',system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+#app{background:#0b0b0c}
+#app ::selection{background:rgba(62,233,143,.28)}
+
+/* faint dotted grid canvas, same as the landing screens */
+#app .content{
+  background-color:#0b0b0c;
+  background-image:radial-gradient(rgba(255,255,255,.075) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+
+/* ------------------------------ sidebar ------------------------------ */
+#app .sidebar,body.dark #app .sidebar{
+  background:#0e0e10;background-image:none;
+  border-right:1px solid rgba(255,255,255,.10);
+}
+#app .ws-name small,#app .sb-foot .u span{color:rgba(255,255,255,.5)}
+#app .nav-item{color:rgba(255,255,255,.72);border-radius:10px}
+#app .nav-item:hover{background:rgba(255,255,255,.06);color:#fff}
+#app .nav-item.active{
+  background:rgba(62,233,143,.13);color:#eafff3;font-weight:600;
+  box-shadow:inset 0 0 0 1px rgba(62,233,143,.28);
+}
+#app .nav-lbl,#app .nav-lbl.nav-sect{
+  color:rgba(255,255,255,.42);font-size:.7rem;
+  letter-spacing:.06em;text-transform:uppercase;
+}
+#app .nav-sep,body.dark #app .nav-sep{background:rgba(255,255,255,.10)}
+#app .sbq,#app .icon-btn,#app .sb-collapse{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;color:#f4f0e7;
+}
+#app .sbq:hover,#app .icon-btn:hover,#app .sb-collapse:hover{background:rgba(255,255,255,.10)}
+#app .sb-newchat{background:#f4f0e7;color:#0b0b0c;border:0;border-radius:999px;font-weight:600}
+#app .sb-newchat:hover{background:#fff}
+#app .ws:hover,#app .wsm-item:hover{background:rgba(255,255,255,.06)}
+#app .ws-menu,body.dark #app .ws-menu{
+  background:#15151a;border:1px solid rgba(255,255,255,.14);border-radius:16px;
+}
+#app .wsm-sep{background:rgba(255,255,255,.10)}
+#app .avatar,#app .ws-logo{border-radius:999px}
+
+/* --------------------------- tabs + titlebar --------------------------- */
+#app .tabstrip,body.dark #app .tabstrip{
+  background:#0b0b0c;border-bottom:1px solid rgba(255,255,255,.10);
+}
+#app .tab,body.dark #app .tab{color:rgba(255,255,255,.6);border-radius:999px}
+#app .tab.active,body.dark #app .tab.active{
+  background:rgba(255,255,255,.07);color:#fff;box-shadow:inset 0 -2px 0 #3ee98f;
+}
+#app .tab-add:hover{background:rgba(62,233,143,.14);color:#3ee98f}
+#app .menu-toggle{background:transparent;border:0;color:#f4f0e7}
+#titlebar{background:#0b0b0c !important;border-bottom:1px solid rgba(255,255,255,.10) !important}
+
+/* ------------------------- cards and panels ------------------------- */
+#app .card,#app .u-card,#app .u-game,#app .pcard,#app .cc-box,
+#modal .modal-card,.palette,
+body.dark #app .card,body.dark #app .u-card,body.dark #app .u-game,
+body.dark #app .pcard,body.dark #app .cc-box,
+body.dark #modal .modal-card,body.dark .palette{
+  background:#15151a !important;
+  border:1px solid rgba(255,255,255,.13) !important;
+  border-radius:18px;
+  color:#f4f0e7 !important;
+}
+#app .card{transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease}
+#app .card:hover{border-color:rgba(255,255,255,.26) !important}
+#app .stat,#app .qa{
+  background:#15151a;border:1px solid rgba(255,255,255,.13);border-radius:16px;
+}
+#app .stat:hover,#app .qa:hover{
+  border-color:#3ee98f;transform:translateY(-2px);
+  box-shadow:0 12px 32px rgba(0,0,0,.55);
+}
+#app .stat .sl{color:rgba(255,255,255,.5)}
+#app .stat .sn{font-weight:600;letter-spacing:-.03em}
+#app .sec-h h2{font-weight:600;letter-spacing:-.02em}
+#app .u-stat,body.dark #app .u-stat{
+  background:linear-gradient(135deg,rgba(62,233,143,.14),rgba(201,211,86,.10));
+}
+#app .u-card.owner,body.dark #app .u-card.owner{
+  background:#15151a !important;border-color:rgba(201,211,86,.45) !important;
+}
+#app .seg,body.dark #app .seg{background:rgba(255,255,255,.05);border-radius:999px}
+#app .seg button{color:rgba(255,255,255,.6);border-radius:999px}
+#app .seg button.active,body.dark #app .seg button.active{background:rgba(255,255,255,.10);color:#fff}
+#app .empty,body.dark #app .empty{color:rgba(255,255,255,.5)}
+
+/* ----------------------------- buttons ----------------------------- */
+#app .btn,#modal .btn,.palette .btn{
+  background:#f4f0e7 !important;color:#0b0b0c !important;
+  border:0 !important;border-radius:999px;font-weight:600;box-shadow:none !important;
+}
+#app .btn:hover,#modal .btn:hover{background:#fff !important;filter:none}
+#app .btn.ghost,#modal .btn.ghost{
+  background:transparent !important;color:#f4f0e7 !important;
+  border:1px solid rgba(255,255,255,.26) !important;
+}
+#app .btn.ghost:hover,#modal .btn.ghost:hover{background:rgba(255,255,255,.08) !important}
+#app .btn.accent,#modal .btn.accent{background:#3ee98f !important;color:#06281a !important}
+#app .chip,body.dark #app .chip{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);
+  color:rgba(255,255,255,.72);border-radius:999px;
+}
+#app .chip:hover{background:rgba(255,255,255,.10);color:#fff}
+#app .chip.active,body.dark #app .chip.active{
+  background:#3ee98f !important;border-color:transparent !important;
+  color:#06281a !important;box-shadow:none !important;
+}
+
+/* ------------------------------ inputs ------------------------------ */
+#app input,#app textarea,#app select,
+#modal input,#modal textarea,#modal select,
+.palette input,.palette .pin input,
+body.dark #app input,body.dark #app textarea,body.dark #app select{
+  background:#101014 !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  color:#f4f0e7 !important;border-radius:12px;
+}
+#app input:focus,#app textarea:focus,#app select:focus,
+#modal input:focus,#modal textarea:focus,#modal select:focus,.palette input:focus{
+  border-color:#3ee98f !important;
+  box-shadow:0 0 0 3px rgba(62,233,143,.18) !important;outline:none;
+}
+#app input::placeholder,#app textarea::placeholder,
+#modal input::placeholder,.palette input::placeholder,
+body.dark #app input::placeholder{color:rgba(255,255,255,.38)}
+
+/* --------------------- overlays, toasts, scrollbars --------------------- */
+.overlay,#modal{background:rgba(6,6,8,.74)}
+.toast,body.dark .toast{
+  background:#15151a !important;border:1px solid rgba(255,255,255,.14);
+  color:#f4f0e7;border-radius:14px;
+}
+.toast.ok,body.dark .toast.ok{background:#0f2a1d !important;border-color:rgba(62,233,143,.42)}
+.toast.err,body.dark .toast.err{background:#2a1414 !important;border-color:rgba(229,100,88,.45)}
+#app .content::-webkit-scrollbar{width:10px;height:10px}
+#app .content::-webkit-scrollbar-track{background:transparent}
+#app .content::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:999px}
+#app .content::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.24)}
+#app button:focus-visible,#app a:focus-visible,#app input:focus-visible{
+  outline:2px solid #3ee98f;outline-offset:3px;
+}
+/* game boards stay on white so the games still read correctly */
+#app .stage,body.dark #app .stage{background:#fff}
+
+/* ======================================================================
+   Chrome that lives OUTSIDE #app - confirm dialog, floating dock,
+   settings panel, title bar. These were the bits still showing purple.
+   ====================================================================== */
+
+/* ---- confirm / alert dialog (#ccModal) ---- */
+.cc-modal,body.dark .cc-modal{background:rgba(6,6,8,.74);backdrop-filter:blur(6px)}
+.cc-box,body.dark .cc-box{
+  background:#15151a !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  border-radius:20px !important;color:#f4f0e7 !important;
+  box-shadow:0 24px 60px rgba(0,0,0,.6) !important;
+}
+/* the old purple accent strip along the dialog's top edge */
+.cc-box:before,.cc-box::before{
+  background:linear-gradient(90deg,#3ee98f,#c9d356) !important;
+}
+.cc-modal .btn,#ccModal .btn{
+  background:#f4f0e7 !important;color:#0b0b0c !important;
+  border:0 !important;border-radius:999px !important;
+  font-weight:600;box-shadow:none !important;background-image:none !important;
+}
+.cc-modal .btn:hover,#ccModal .btn:hover{background:#fff !important}
+.cc-modal .btn.ghost,#ccModal .btn.ghost,
+.cc-modal #ccCancel,#ccModal #ccCancel{
+  background:transparent !important;color:#f4f0e7 !important;
+  border:1px solid rgba(255,255,255,.26) !important;background-image:none !important;
+}
+.cc-modal .btn.ghost:hover,#ccModal #ccCancel:hover{background:rgba(255,255,255,.08) !important}
+/* destructive actions stay red so they still read as a warning */
+#app .btn.danger,#modal .btn.danger,.cc-modal .btn.danger,#ccModal .btn.danger{
+  background:#e56458 !important;color:#2a0b07 !important;background-image:none !important;
+}
+#app .btn.danger:hover,#ccModal .btn.danger:hover{background:#ef7062 !important}
+
+/* ---- floating dock (bottom nav) ---- */
+.lb-dock,body.dark .lb-dock{
+  background:rgba(17,17,20,.78) !important;
+  border:1px solid rgba(255,255,255,.14) !important;
+  box-shadow:0 14px 40px rgba(0,0,0,.55) !important;
+}
+.lb-dock button{color:#f4f0e7}
+.lb-dock button small{color:rgba(255,255,255,.55)}
+.lb-dock button:hover,body.dark .lb-dock button:hover{background:rgba(255,255,255,.10)}
+.lb-dock button.on{
+  background:rgba(62,233,143,.16) !important;background-image:none !important;
+  box-shadow:inset 0 0 0 1px rgba(62,233,143,.3);
+}
+.lb-dock button.on small{color:#eafff3}
+
+/* ---- title bar + its settings panel ---- */
+.titlebar,body.dark .titlebar{
+  background:#0b0b0c !important;background-image:none !important;
+  color:#f4f0e7 !important;border-bottom:1px solid rgba(255,255,255,.10);
+}
+.titlebar button,.titlebar .tb-btn{color:#f4f0e7}
+.tb-panel,body.dark .tb-panel{
+  background:#15151a !important;border:1px solid rgba(255,255,255,.14) !important;
+  border-radius:18px !important;color:#f4f0e7 !important;
+  box-shadow:0 24px 60px rgba(0,0,0,.6) !important;
+}
+.tb-panel .set-item,.set-item{color:#f4f0e7;border-radius:10px}
+.tb-panel .set-item:hover,.set-item:hover{background:rgba(255,255,255,.06)}
+.u5-val{color:rgba(255,255,255,.55)}
+.u5-segs,.u5-keys{color:#f4f0e7}
+.u5-seg{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);
+  color:rgba(255,255,255,.7);border-radius:999px;
+}
+.u5-seg.on,.u5-seg.active{background:#3ee98f !important;color:#06281a !important;border-color:transparent !important}
+#u5Find{
+  background:#101014 !important;border:1px solid rgba(255,255,255,.16) !important;
+  color:#f4f0e7 !important;border-radius:12px;
+}
+</style>
 </head>
 <body>
 <div id="mxBoot" role="status" aria-live="polite" aria-label="Loading Matix">
@@ -12921,19 +12969,13 @@ try{
 <script id="mxLgJs">
 /* =========================================================================
    MATIX — Google Labs styled landing layer
-<<<<<<< HEAD
    1. loading screen  2. welcome (snapped sections)  3. sign in
    Featured hero auto-advances with a timer-bar carousel, like labs.google.
    Every word on these screens is owner-editable and lives at /siteContent/gate
-=======
-   1. loading screen first, 2. welcome, 3. sign in  (labs.google order)
-   All landing copy is owner-editable and stored at /siteContent/gate
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
    ========================================================================= */
 (function(){
 'use strict';
 
-<<<<<<< HEAD
 var SC_PATH   = '/siteContent/gate';
 var CACHE_KEY = 'mx_sc_gate_v2';
 var DWELL     = 6000;   /* ms each featured slide stays up */
@@ -12944,15 +12986,10 @@ var PV = null;          /* unsaved preview content, when previewing */
 var keptDraft = null;   /* draft carried between editor and preview */
 
 var D = {
-=======
-var SC_PATH='/siteContent/gate';
-var SC_DEFAULT={
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
   loadTagline:'Loading your math workspace\u2026',
   loadNote:'Starting up',
   wordmark:'MATIX',
   eyebrow:'Free math education platform',
-<<<<<<< HEAD
   badge:'100% free \u00b7 forever',
   featured:[
     {word:'MATIX',
@@ -12997,24 +13034,6 @@ function $id(i){return document.getElementById(i);}
 function isArr(v){return Object.prototype.toString.call(v)==='[object Array]';}
 function on(n,ev,fn){ if(n&&n.addEventListener) n.addEventListener(ev,fn); }
 function str(v){ return typeof v==='string'?v:''; }
-=======
-  heading:'Turn math into something you actually want to open.',
-  lead:'A free, educative platform for the Math Club \u2014 AI lessons that start from zero, games made by members, and a community that levels up together.',
-  cta:'Try it now',
-  badge:'100% free \u00b7 forever',
-  cards:[
-    {icon:'\uD83E\uDD89',title:'Learn anything',body:'AI lessons explain math from zero, with quizzes that check your understanding.',tag:'Learn'},
-    {icon:'\uD83C\uDFAE',title:'Play & create',body:'Try club games or publish your own \u2014 a creative way to practice math.',tag:'Create'},
-    {icon:'\u2728',title:'Club community',body:'Share ideas, earn points, chat with friends, and shape what Matix builds next.',tag:'Community'}
-  ],
-  social:{discord:'',reddit:'',x:''}
-};
-var SC=null;
-var MAX_CARDS=6;
-
-/* ----------------------------- small helpers ----------------------------- */
-function $id(i){return document.getElementById(i);}
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 function E(s){
   s=(s==null?'':String(s));
   try{ if(typeof esc==='function') return esc(s); }catch(e){}
@@ -13022,18 +13041,12 @@ function E(s){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
   });
 }
-<<<<<<< HEAD
 function reduced(){
   try{
     if(document.body&&document.body.classList.contains('reduce-motion')) return true;
     return !!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches);
   }catch(e){ return false; }
 }
-=======
-function isArr(v){return Object.prototype.toString.call(v)==='[object Array]';}
-function on(node,ev,fn){ if(node&&node.addEventListener) node.addEventListener(ev,fn); }
-
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 function ownerNow(){
   try{ if(typeof ROLE_OWNER!=='undefined'&&ROLE_OWNER) return true; }catch(e){}
   try{
@@ -13044,7 +13057,6 @@ function ownerNow(){
   return false;
 }
 
-<<<<<<< HEAD
 /* --------------------------- content: merge/migrate --------------------------- */
 function cleanSlides(v){
   var out=[];
@@ -13251,77 +13263,10 @@ function collageHtml(){
 
 function navHtml(c){
   var ls=liveLinks(c);
-=======
-/* --------------------------- site content store --------------------------- */
-function scMerge(raw){
-  var c={},k;
-  for(k in SC_DEFAULT){ if(Object.prototype.hasOwnProperty.call(SC_DEFAULT,k)) c[k]=SC_DEFAULT[k]; }
-  if(raw&&typeof raw==='object'){
-    for(k in SC_DEFAULT){
-      if(!Object.prototype.hasOwnProperty.call(SC_DEFAULT,k)) continue;
-      var v=raw[k];
-      if(v==null) continue;
-      if(k==='cards'){
-        if(isArr(v)&&v.length){
-          var out=[];
-          for(var i=0;i<v.length&&out.length<MAX_CARDS;i++){
-            var it=v[i];
-            if(it&&typeof it==='object'&&(it.title||it.body)){
-              out.push({icon:it.icon||'\u2728',title:it.title||'',body:it.body||'',tag:it.tag||''});
-            }
-          }
-          if(out.length) c.cards=out;
-        }
-      }else if(k==='social'){
-        if(typeof v==='object') c.social={discord:v.discord||'',reddit:v.reddit||'',x:v.x||''};
-      }else if(typeof v==='string'&&v!==''){
-        c[k]=v;
-      }
-    }
-  }
-  return c;
-}
-function scLoad(){
-  return new Promise(function(res){
-    var done=false;
-    var t=setTimeout(function(){ if(!done){done=true;res(scMerge(null));} },2600);
-    function ok(v){ if(done)return; done=true; clearTimeout(t); res(scMerge(v)); }
-    function bad(){ if(done)return; done=true; clearTimeout(t); res(scMerge(null)); }
-    try{
-      if(typeof fbGet!=='function'){ bad(); return; }
-      Promise.resolve(fbGet(SC_PATH)).then(ok,bad);
-    }catch(e){ bad(); }
-  });
-}
-function scSave(obj){
-  if(typeof fbPut!=='function') return Promise.reject(new Error('offline'));
-  return Promise.resolve(fbPut(SC_PATH,obj));
-}
-window.mxSiteContent=function(){ return SC||scMerge(null); };
-
-/* ------------------------------ boot screen ------------------------------ */
-function paintBoot(c){
-  var w=$id('mxBootWord'), t=$id('mxBootTag'), d=$id('mxBootDots');
-  if(w) w.textContent=c.wordmark||SC_DEFAULT.wordmark;
-  if(t) t.textContent=c.loadTagline||SC_DEFAULT.loadTagline;
-  if(d) d.textContent=c.loadNote||SC_DEFAULT.loadNote;
-}
-
-/* --------------------------- welcome screen paint --------------------------- */
-function collageHtml(){
-  var h='<div class="lg-collage" aria-hidden="true">';
-  for(var i=1;i<=6;i++) h+='<div class="lg-tile t'+i+'"></div>';
-  return h+'</div>';
-}
-
-function navHtml(c){
-  var s=c.social||{};
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
   var h='<nav class="lg-nav">';
   h+='<div class="lg-nav-logo"><span class="lg-flask" aria-hidden="true">&#9879;</span>'
    + '<span>'+E(c.wordmark||'MATIX')+'</span></div>';
   h+='<div class="lg-nav-links">'
-<<<<<<< HEAD
    + '<a data-go="0">Featured</a><a data-go="1">Sections</a><a data-go="2">Get started</a>'
    + '</div>';
   h+='<div class="lg-nav-right">';
@@ -13431,57 +13376,6 @@ function endSectionHtml(c){
   if(ownerNow()){
     h+='<div><button type="button" class="gate-edit" id="gEditContent">'
      + '\u270E Edit these screens (owner)</button></div>';
-=======
-   + '<a data-jump="hero">About</a>'
-   + '<a data-jump="cards">Features</a>'
-   + '<a data-jump="signin">Get started</a>'
-   + '</div>';
-  h+='<div class="lg-nav-right">';
-  if(s.discord) h+='<a class="lg-soc" target="_blank" rel="noopener" title="Discord" href="'+E(s.discord)+'">D</a>';
-  if(s.reddit)  h+='<a class="lg-soc" target="_blank" rel="noopener" title="Reddit" href="'+E(s.reddit)+'">R</a>';
-  if(s.x)       h+='<a class="lg-soc" target="_blank" rel="noopener" title="X" href="'+E(s.x)+'">X</a>';
-  h+='<button type="button" class="lg-nav-signin" id="gNavSignin">Sign in</button>';
-  h+='</div></nav>';
-  return h;
-}
-
-function heroHtml(c){
-  var h='<div class="lg-hero" id="lgHero">';
-  if(c.eyebrow) h+='<div><span class="lb-eyebrow"><span class="dot"></span>'+E(c.eyebrow)+'</span></div>';
-  h+='<div class="lb-word">'+E(c.wordmark||'MATIX')+'</div>';
-  if(c.heading) h+='<h1 class="gate-welcome-h no-mxlogo">'+E(c.heading)+'</h1>';
-  if(c.lead)    h+='<p class="gate-welcome-lead no-mxlogo">'+E(c.lead)+'</p>';
-  h+='<button type="button" class="gate-continue" id="gContinue">'+E(c.cta||SC_DEFAULT.cta)+'</button>';
-  if(c.badge)   h+='<div class="gate-free-badge">'+E(c.badge)+'</div>';
-  h+='</div>';
-  return h;
-}
-
-function pillsHtml(cards){
-  var tags=[],i,t;
-  for(i=0;i<cards.length;i++){
-    t=(cards[i].tag||'').trim();
-    if(t&&tags.indexOf(t)===-1) tags.push(t);
-  }
-  if(tags.length<2) return '';
-  var h='<div class="lg-pills" id="lgPills">'
-      + '<button type="button" class="lg-pill on" data-tag="*">All</button>';
-  for(i=0;i<tags.length;i++) h+='<button type="button" class="lg-pill" data-tag="'+E(tags[i])+'">'+E(tags[i])+'</button>';
-  return h+'</div>';
-}
-
-function cardsHtml(cards){
-  if(!cards.length) return '';
-  var h='<div class="gate-goals no-mxlogo" id="lgCards">';
-  for(var i=0;i<cards.length;i++){
-    var k=cards[i];
-    h+='<div class="gate-goal" role="button" tabindex="0" data-tag="'+E(k.tag||'')+'">'
-     +   '<div class="gi">'+E(k.icon||'\u2728')+'</div>'
-     +   '<b>'+E(k.title||'')+'</b>'
-     +   '<span>'+E(k.body||'')+'</span>'
-     +   '<span class="gg-cta">Try it now &#8594;</span>'
-     + '</div>';
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
   }
   return h+'</div>';
 }
@@ -13489,7 +13383,6 @@ function cardsHtml(cards){
 function paintWelcome(c){
   var inner=document.querySelector('#gateWelcome .gate-welcome-inner');
   if(!inner) return;
-<<<<<<< HEAD
 
   var h=collageHtml()+navHtml(c)
    + '<div class="lg-secdots" id="lgSecdots">'
@@ -13775,26 +13668,10 @@ function closeInside(silent){
 }
 window.mxOpenInside=openInside;
 window.mxCloseInside=closeInside;
-=======
-  var cards=isArr(c.cards)?c.cards:[];
-  var html=collageHtml()+navHtml(c)+heroHtml(c)+pillsHtml(cards)+cardsHtml(cards);
-  if(ownerNow()) html+='<button type="button" class="gate-edit" id="gEditContent">\u270E Edit this screen (owner)</button>';
-  inner.innerHTML=html;
-  wireWelcome();
-}
-
-function repaintAll(){
-  var c=SC||scMerge(null);
-  paintBoot(c);
-  if($id('gateWelcome')) paintWelcome(c);
-}
-window.mxRepaintScreens=repaintAll;
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 
 /* ---------------------------- screen switching ---------------------------- */
 function showGateWelcome(){
   var g=$id('gate'), w=$id('gateWelcome'), a=$id('gateAuth');
-<<<<<<< HEAD
   if(g){ g.style.display='block'; g.classList.add('lg-snap'); }
   if(a) a.style.display='none';
   if(w) w.style.display='block';
@@ -13812,28 +13689,12 @@ function showGateAuth(){
   try{ if(g) g.scrollTop=0; }catch(e){}
   var u=$id('gUser');
   if(u) setTimeout(function(){ try{u.focus();}catch(e){} },120);
-=======
-  if(g) g.style.display='block';
-  if(a) a.style.display='none';
-  if(w) w.style.display='flex';
-  try{ if(g) g.scrollTop=0; }catch(e){}
-}
-function showGateAuth(){
-  var g=$id('gate'), w=$id('gateWelcome'), a=$id('gateAuth');
-  if(g) g.style.display='block';
-  if(w) w.style.display='none';
-  if(a) a.style.display='flex';
-  try{ if(typeof refreshGate==='function') refreshGate(); }catch(e){}
-  try{ if(g) g.scrollTop=0; }catch(e){}
-  try{ var u=$id('gUser'); if(u) setTimeout(function(){try{u.focus();}catch(e){}},120); }catch(e){}
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 }
 window.showGateWelcome=showGateWelcome;
 window.showGateAuth=showGateAuth;
 
 /* -------------------------------- wiring -------------------------------- */
 function wireWelcome(){
-<<<<<<< HEAD
   /* anything marked data-signin opens the sign-in card */
   var go=document.querySelectorAll('#gateWelcome [data-signin]');
   for(var i=0;i<go.length;i++){
@@ -13878,61 +13739,17 @@ function wireWelcome(){
 
   /* category pills filter the cards */
   var pills=document.querySelectorAll('#lgPills .lg-pill');
-=======
-  var go=$id('gContinue');
-  if(go) on(go,'click',function(){ showGateAuth(); });
-
-  var nav=$id('gNavSignin');
-  if(nav) on(nav,'click',function(){ showGateAuth(); });
-
-  var ed=$id('gEditContent');
-  if(ed) on(ed,'click',function(){ openSiteEditor(); });
-
-  /* nav jump links */
-  var links=document.querySelectorAll('#gateWelcome .lg-nav-links a[data-jump]');
-  for(var i=0;i<links.length;i++){
-    (function(a){
-      on(a,'click',function(){
-        var to=a.getAttribute('data-jump');
-        if(to==='signin'){ showGateAuth(); return; }
-        var el=$id(to==='cards'?'lgCards':'lgHero');
-        if(el&&el.scrollIntoView) el.scrollIntoView({behavior:'smooth',block:'start'});
-      });
-    })(links[i]);
-  }
-
-  /* cards open sign in */
-  var goals=document.querySelectorAll('#gateWelcome .gate-goal');
-  for(var j=0;j<goals.length;j++){
-    (function(card){
-      on(card,'click',function(){ showGateAuth(); });
-      on(card,'keydown',function(ev){
-        if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); showGateAuth(); }
-      });
-    })(goals[j]);
-  }
-
-  /* category pills filter the cards */
-  var pills=document.querySelectorAll('#gateWelcome .lg-pill');
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
   for(var p=0;p<pills.length;p++){
     (function(btn){
       on(btn,'click',function(){
         var tag=btn.getAttribute('data-tag');
         for(var q=0;q<pills.length;q++) pills[q].classList.remove('on');
         btn.classList.add('on');
-<<<<<<< HEAD
         var cs=document.querySelectorAll('#lgCards .gate-goal');
         for(var r=0;r<cs.length;r++){
           var show=(tag==='*')||(cs[r].getAttribute('data-tag')===tag);
           cs[r].style.display=show?'':'none';
           if(show) cs[r].classList.add('mx-in');
-=======
-        var cs=document.querySelectorAll('#gateWelcome .gate-goal');
-        for(var r=0;r<cs.length;r++){
-          var show=(tag==='*')||(cs[r].getAttribute('data-tag')===tag);
-          cs[r].style.display=show?'':'none';
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
         }
       });
     })(pills[p]);
@@ -13940,7 +13757,6 @@ function wireWelcome(){
 }
 
 function wireGate(){
-<<<<<<< HEAD
   on($id('gBackWelcome'),'click',function(){ showGateWelcome(); });
 
   /* keyboard paging while the welcome screen is up */
@@ -13961,10 +13777,6 @@ function wireGate(){
     else if(ev.key==='ArrowRight'&&cur===0){ slideTo(car.i+1,true); }
     else if(ev.key==='ArrowLeft'&&cur===0){ slideTo(car.i-1,true); }
   });
-=======
-  var back=$id('gBackWelcome');
-  if(back) on(back,'click',function(){ showGateWelcome(); });
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 }
 
 /* the app defined these sign-out helpers but never connected them */
@@ -13995,10 +13807,6 @@ function afterBoot(){
   try{ if(typeof getUser==='function') u=getUser(); }catch(e){}
 
   if(u){
-<<<<<<< HEAD
-=======
-    /* signed in — the app already entered; just validate the session */
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
     try{
       if(typeof checkSessionValid==='function'){
         Promise.resolve(checkSessionValid(u)).then(function(ok){
@@ -14010,10 +13818,6 @@ function afterBoot(){
       }
     }catch(e){}
   }else{
-<<<<<<< HEAD
-=======
-    /* don't yank the user back if they already reached the sign-in card */
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
     var a=$id('gateAuth');
     var authOpen=!!(a&&a.style&&a.style.display&&a.style.display!=='none');
     if(!authOpen) showGateWelcome();
@@ -14021,10 +13825,6 @@ function afterBoot(){
 
   wireSignOuts();
   setTimeout(wireSignOuts,1200);
-<<<<<<< HEAD
-=======
-  initReveal();
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 }
 
 function runBoot(){
@@ -14041,38 +13841,23 @@ function runBoot(){
     finished=true;
     clearInterval(tick);
     if(bar) bar.style.width='100%';
-<<<<<<< HEAD
     setTimeout(afterBoot,Math.max(0,MIN-(Date.now()-started))+260);
   }
   var hard=setTimeout(finish,HARD);
 
   loadContent().then(function(c){
-=======
-    var wait=Math.max(0,MIN-(Date.now()-started));
-    setTimeout(afterBoot,wait+260);
-  }
-
-  var hard=setTimeout(finish,HARD);
-
-  scLoad().then(function(c){
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
     SC=c;
     paintBoot(c);
     if($id('gateWelcome')) paintWelcome(c);
     clearTimeout(hard);
     finish();
   },function(){
-<<<<<<< HEAD
     SC=merge(null);
-=======
-    SC=scMerge(null);
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
     clearTimeout(hard);
     finish();
   });
 }
 
-<<<<<<< HEAD
 /* ============================ OWNER EDITOR ============================ */
 function blankDraft(){
   var c=SC||merge(null);
@@ -14186,51 +13971,11 @@ function openEditor(draft){
       h+='<div class="mxsc-card">'
        + '<div class="mxsc-hd"><span>Section card '+(i+1)+'</span>'
        +   '<button type="button" class="mxsc-del" data-delc="'+i+'">remove</button></div>'
-=======
-/* --------------------------- owner content editor --------------------------- */
-function openSiteEditor(){
-  var c=SC||scMerge(null);
-  var draft={
-    wordmark:c.wordmark, eyebrow:c.eyebrow, heading:c.heading, lead:c.lead,
-    cta:c.cta, badge:c.badge, loadTagline:c.loadTagline, loadNote:c.loadNote,
-    social:{discord:(c.social||{}).discord||'',reddit:(c.social||{}).reddit||'',x:(c.social||{}).x||''},
-    cards:(c.cards||[]).map(function(k){return {icon:k.icon,title:k.title,body:k.body,tag:k.tag||''};})
-  };
-
-  var ov=document.createElement('div');
-  ov.id='mxScOverlay';
-  ov.setAttribute('style','position:fixed;inset:0;z-index:100000;background:rgba(6,6,8,.72);'
-    +'display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:28px 16px;');
-
-  var card=document.createElement('div');
-  card.setAttribute('style','background:#fff;color:#141414;border-radius:20px;width:100%;max-width:620px;'
-    +'padding:24px;box-shadow:0 30px 90px rgba(0,0,0,.5);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;');
-  ov.appendChild(card);
-
-  function row(label,key,ta){
-    return '<div class="mxsc-row"><label>'+E(label)+'</label>'
-      + (ta ? '<textarea data-k="'+key+'">'+E(draft[key]||'')+'</textarea>'
-            : '<input data-k="'+key+'" value="'+E(draft[key]||'')+'">')
-      + '</div>';
-  }
-  function socRow(label,key){
-    return '<div class="mxsc-row"><label>'+E(label)+'</label>'
-      + '<input data-s="'+key+'" placeholder="https://…" value="'+E(draft.social[key]||'')+'"></div>';
-  }
-  function cardRows(){
-    var h='';
-    for(var i=0;i<draft.cards.length;i++){
-      var k=draft.cards[i];
-      h+='<div class="mxsc-card" data-i="'+i+'">'
-       + '<div class="mxsc-hd">Card '+(i+1)
-       +   ' <button type="button" class="mxsc-del" data-del="'+i+'">remove</button></div>'
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
        + '<div class="mxsc-grid">'
        +   '<div class="mxsc-row"><label>Icon</label><input data-ci="'+i+'" data-ck="icon" value="'+E(k.icon||'')+'"></div>'
        +   '<div class="mxsc-row"><label>Title</label><input data-ci="'+i+'" data-ck="title" value="'+E(k.title||'')+'"></div>'
        + '</div>'
        + '<div class="mxsc-row"><label>Body</label><textarea data-ci="'+i+'" data-ck="body">'+E(k.body||'')+'</textarea></div>'
-<<<<<<< HEAD
        + '<div class="mxsc-grid2">'
        +   '<div class="mxsc-row"><label>Category pill</label><input data-ci="'+i+'" data-ck="tag" value="'+E(k.tag||'')+'"></div>'
        +   '<div class="mxsc-row"><label>Corner badge</label><input data-ci="'+i+'" data-ck="badge" value="'+E(k.badge||'')+'"></div>'
@@ -14251,9 +13996,6 @@ function openSiteEditor(){
        + '<div class="mxsc-row"><label>Label</label><input data-li="'+i+'" data-lk="label" value="'+E(l.label||'')+'"></div>'
        + '<div class="mxsc-row"><label>Link <button type="button" class="mxsc-del" data-dell="'+i+'">remove</button></label>'
        +   '<input data-li="'+i+'" data-lk="url" placeholder="https://\u2026" value="'+E(l.url||'')+'"></div>'
-=======
-       + '<div class="mxsc-row"><label>Category pill (optional)</label><input data-ci="'+i+'" data-ck="tag" value="'+E(k.tag||'')+'"></div>'
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
        + '</div>';
     }
     return h;
@@ -14261,7 +14003,6 @@ function openSiteEditor(){
 
   function render(){
     card.innerHTML=
-<<<<<<< HEAD
       '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">'
     +   '<b style="font-size:1.1rem">Edit landing screens</b>'
     +   '<button type="button" id="scX" style="background:none;border:0;font-size:22px;'
@@ -14327,73 +14068,10 @@ function openSiteEditor(){
           render();
         });
       })(bs[i]);
-=======
-      '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">'
-    +   '<b style="font-size:1.12rem">Edit landing screens</b>'
-    +   '<button type="button" id="scX" style="background:none;border:0;font-size:22px;cursor:pointer;line-height:1">&times;</button>'
-    + '</div>'
-    + '<div class="mxsc-wrap">'
-    +   '<div class="mxsc-card"><div class="mxsc-hd">Loading screen</div>'
-    +     row('Wordmark','wordmark')
-    +     row('Tagline','loadTagline')
-    +     row('Status line','loadNote')
-    +   '</div>'
-    +   '<div class="mxsc-card"><div class="mxsc-hd">Welcome screen</div>'
-    +     row('Eyebrow chip','eyebrow')
-    +     row('Heading','heading',true)
-    +     row('Lead paragraph','lead',true)
-    +     row('Button label','cta')
-    +     row('Badge under button','badge')
-    +   '</div>'
-    +   '<div class="mxsc-card"><div class="mxsc-hd">Social links (blank = hidden)</div>'
-    +     socRow('Discord URL','discord')+socRow('Reddit URL','reddit')+socRow('X URL','x')
-    +   '</div>'
-    +   cardRows()
-    +   '<button type="button" id="scAdd" style="background:#f0f0f2;border:0;border-radius:10px;padding:11px;'
-    +     'font-weight:600;cursor:pointer;font:inherit">+ Add card'+(draft.cards.length>=MAX_CARDS?' (max reached)':'')+'</button>'
-    +   '<div class="mxsc-err" id="scErr"></div>'
-    +   '<div style="display:flex;gap:10px;justify-content:flex-end">'
-    +     '<button type="button" id="scReset" style="background:none;border:1px solid #ddd;border-radius:999px;'
-    +       'padding:11px 20px;cursor:pointer;font:inherit">Reset to defaults</button>'
-    +     '<button type="button" id="scSave" style="background:#0b0b0c;color:#fff;border:0;border-radius:999px;'
-    +       'padding:11px 26px;font-weight:600;cursor:pointer;font:inherit">Save</button>'
-    +   '</div>'
-    + '</div>';
-
-    on($id('scX'),'click',close);
-    on($id('scAdd'),'click',function(){
-      if(draft.cards.length>=MAX_CARDS) return;
-      sync();
-      draft.cards.push({icon:'\u2728',title:'',body:'',tag:''});
-      render();
-    });
-    on($id('scReset'),'click',function(){
-      draft={
-        wordmark:SC_DEFAULT.wordmark,eyebrow:SC_DEFAULT.eyebrow,heading:SC_DEFAULT.heading,
-        lead:SC_DEFAULT.lead,cta:SC_DEFAULT.cta,badge:SC_DEFAULT.badge,
-        loadTagline:SC_DEFAULT.loadTagline,loadNote:SC_DEFAULT.loadNote,
-        social:{discord:'',reddit:'',x:''},
-        cards:SC_DEFAULT.cards.map(function(k){return {icon:k.icon,title:k.title,body:k.body,tag:k.tag};})
-      };
-      render();
-    });
-    on($id('scSave'),'click',save);
-
-    var dels=card.querySelectorAll('[data-del]');
-    for(var i=0;i<dels.length;i++){
-      (function(b){
-        on(b,'click',function(){
-          sync();
-          draft.cards.splice(parseInt(b.getAttribute('data-del'),10),1);
-          render();
-        });
-      })(dels[i]);
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
     }
   }
 
   function sync(){
-<<<<<<< HEAD
     var i,n,idx;
     n=card.querySelectorAll('[data-k]');
     for(i=0;i<n.length;i++) d[n[i].getAttribute('data-k')]=n[i].value;
@@ -14495,57 +14173,6 @@ function hidePvBar(){
   var b=$id('mxPvBar');
   if(b&&b.parentNode) b.parentNode.removeChild(b);
 }
-=======
-    var f=card.querySelectorAll('[data-k]'),i;
-    for(i=0;i<f.length;i++) draft[f[i].getAttribute('data-k')]=f[i].value;
-    var s=card.querySelectorAll('[data-s]');
-    for(i=0;i<s.length;i++) draft.social[s[i].getAttribute('data-s')]=s[i].value.trim();
-    var cf=card.querySelectorAll('[data-ci]');
-    for(i=0;i<cf.length;i++){
-      var idx=parseInt(cf[i].getAttribute('data-ci'),10);
-      if(draft.cards[idx]) draft.cards[idx][cf[i].getAttribute('data-ck')]=cf[i].value;
-    }
-  }
-
-  function close(){ try{ if(ov.parentNode) ov.parentNode.removeChild(ov); }catch(e){} }
-
-  function save(){
-    sync();
-    var err=$id('scErr');
-    var clean=[];
-    for(var i=0;i<draft.cards.length;i++){
-      var k=draft.cards[i];
-      if((k.title&&k.title.trim())||(k.body&&k.body.trim())){
-        clean.push({icon:(k.icon||'\u2728').trim(),title:(k.title||'').trim(),
-                    body:(k.body||'').trim(),tag:(k.tag||'').trim()});
-      }
-    }
-    if(!draft.wordmark||!draft.wordmark.trim()){ if(err)err.textContent='Wordmark cannot be empty.'; return; }
-    var payload={
-      wordmark:draft.wordmark.trim(), eyebrow:(draft.eyebrow||'').trim(),
-      heading:(draft.heading||'').trim(), lead:(draft.lead||'').trim(),
-      cta:(draft.cta||'').trim()||SC_DEFAULT.cta, badge:(draft.badge||'').trim(),
-      loadTagline:(draft.loadTagline||'').trim()||SC_DEFAULT.loadTagline,
-      loadNote:(draft.loadNote||'').trim()||SC_DEFAULT.loadNote,
-      social:draft.social, cards:clean
-    };
-    if(err) err.textContent='Saving\u2026';
-    scSave(payload).then(function(){
-      SC=scMerge(payload);
-      repaintAll();
-      close();
-      try{ if(typeof toast==='function') toast('Landing screens updated','ok'); }catch(e){}
-    },function(){
-      if(err) err.textContent='Could not save \u2014 check your connection and try again.';
-    });
-  }
-
-  on(ov,'click',function(ev){ if(ev.target===ov) close(); });
-  render();
-  document.body.appendChild(ov);
-}
-window.mxOpenSiteEditor=openSiteEditor;
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
 
 /* floating owner shortcut inside the app */
 function ownerFab(){
@@ -14556,7 +14183,6 @@ function ownerFab(){
   b.setAttribute('style','position:fixed;right:18px;bottom:18px;z-index:9500;width:46px;height:46px;'
     +'border-radius:50%;border:0;background:#0b0b0c;color:#3ee98f;font-size:18px;cursor:pointer;'
     +'box-shadow:0 10px 26px rgba(0,0,0,.35)');
-<<<<<<< HEAD
   on(b,'click',function(){ openEditor(); });
   document.body.appendChild(b);
 }
@@ -14568,48 +14194,14 @@ function start(){
   runBoot();
 
   /* the owner role resolves asynchronously - repaint once it lands */
-=======
-  on(b,'click',function(){ openSiteEditor(); });
-  document.body.appendChild(b);
-}
-
-/* ------------------------------ scroll reveal ------------------------------ */
-function initReveal(){
-  if(!window.IntersectionObserver) return;
-  var io=new IntersectionObserver(function(entries){
-    for(var i=0;i<entries.length;i++){
-      if(entries[i].isIntersecting){
-        entries[i].target.classList.add('mx-in');
-        io.unobserve(entries[i].target);
-      }
-    }
-  },{rootMargin:'0px 0px -8% 0px',threshold:.06});
-  window.mxObserveReveal=function(root){
-    var ns=(root||document).querySelectorAll('.mx-reveal:not(.mx-in)');
-    for(var i=0;i<ns.length;i++) io.observe(ns[i]);
-  };
-  window.mxObserveReveal(document);
-}
-
-/* --------------------------------- start --------------------------------- */
-function start(){
-  wireGate();
-  paintBoot(scMerge(null));
-  runBoot();
-  /* the owner role resolves asynchronously — repaint once it lands */
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
   var tries=0;
   var poll=setInterval(function(){
     tries++;
     if(ownerNow()){
       clearInterval(poll);
       ownerFab();
-<<<<<<< HEAD
       var w=$id('gateWelcome');
       if(w&&w.style.display!=='none'&&!$id('gEditContent')) repaint();
-=======
-      if($id('gateWelcome')&&$id('gateWelcome').style.display!=='none') paintWelcome(SC||scMerge(null));
->>>>>>> bca0a6c97356499e5522f7b1ebc357d1de8e2d4e
     }
     if(tries>40) clearInterval(poll);
   },900);
