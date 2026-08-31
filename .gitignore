@@ -1,0 +1,47 @@
+# ---- Xcode build output ----
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+
+# ---- Xcode per-user state ----
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# ---- Swift Package Manager ----
+.build/
+.swiftpm/
+Packages/
+Package.resolved
+
+# ---- CocoaPods (if ever added) ----
+Pods/
+
+# ---- signing / fastlane ----
+*.mobileprovision
+*.p12
+*.cer
+fastlane/report.xml
+fastlane/screenshots/
+
+# ---- Node ----
+node_modules/
+npm-debug.log*
+
+# ---- macOS junk ----
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ---- editors ----
+.vscode/
+.idea/
+*.swp
+
+# NOTE: app.html in the project root is the source of truth and IS tracked.
