@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA1F576266954906B7E93337 /* MatixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D053CFCFC04963BE31BE82 /* MatixApp.swift */; };
 		ECC27444549746CBBD913F71 /* WebShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AC74C2A0C4B53B24B5E3F /* WebShell.swift */; };
+		A1B2C3D4E5F6111122223333 /* MatixAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6111122223334 /* MatixAI.swift */; };
 		82D44B40E84544068461763C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E09D001E980E4EA59EC2A995 /* Assets.xcassets */; };
 		30AC5BF4DC9C456693C3CFF2 /* app.html in Resources */ = {isa = PBXBuildFile; fileRef = B14855083AC6415195456221 /* app.html */; };
 /* End PBXBuildFile section */
@@ -17,6 +18,7 @@
 		2A10780B17FF404DB4A0D529 /* Matix the Math Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Matix the Math Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4D053CFCFC04963BE31BE82 /* MatixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatixApp.swift; sourceTree = "<group>"; };
 		CC4AC74C2A0C4B53B24B5E3F /* WebShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebShell.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F6111122223334 /* MatixAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatixAI.swift; sourceTree = "<group>"; };
 		E09D001E980E4EA59EC2A995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B14855083AC6415195456221 /* app.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = app.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,11 +50,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A1B2C3D4E5F6111122223335 /* Ai */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F6111122223334 /* MatixAI.swift */,
+			);
+			path = Ai;
+			sourceTree = "<group>";
+		};
 		EC36E71AA7CD428495C1ED2F /* Matix the Math Club */ = {
 			isa = PBXGroup;
 			children = (
 				C4D053CFCFC04963BE31BE82 /* MatixApp.swift */,
 				CC4AC74C2A0C4B53B24B5E3F /* WebShell.swift */,
+				A1B2C3D4E5F6111122223335 /* Ai */,
 				E09D001E980E4EA59EC2A995 /* Assets.xcassets */,
 				B14855083AC6415195456221 /* app.html */,
 			);
@@ -126,6 +137,7 @@
 			files = (
 				EA1F576266954906B7E93337 /* MatixApp.swift in Sources */,
 				ECC27444549746CBBD913F71 /* WebShell.swift in Sources */,
+				A1B2C3D4E5F6111122223333 /* MatixAI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

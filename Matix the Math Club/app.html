@@ -14223,12 +14223,14 @@ function openEditor(draft){
     +   '</div>'
     +   '<div class="mxsc-err" id="scErr"></div>'
     +   '<div class="mxsc-foot">'
+    +     '<button type="button" class="mxsc-btn ghost" id="scReset">\u21BA Reset</button>'
     +     '<button type="button" class="mxsc-btn ghost" id="scPreview">\uD83D\uDC41 Preview</button>'
     +     '<button type="button" class="mxsc-btn dark" id="scSave">Save</button>'
     +   '</div>'
     + '</div>';
 
     on(q('#scX'),'click',close);
+    on(q('#scReset'),'click',resetDraft);
     on(q('#scPreview'),'click',preview);
     on(q('#scSave'),'click',save);
 
@@ -14280,6 +14282,15 @@ function openEditor(draft){
       if(d.links[idx]) d.links[idx][n[i].getAttribute('data-lk')]=n[i].value;
     }
     keptDraft=d;
+  }
+
+  function resetDraft(){
+    customConfirm('Reset landing screens to defaults?',function(){
+      d=blankDraft();
+      keptDraft=d;
+      render();
+      try{ if(typeof toast==='function') toast('Editor reset to defaults','ok'); }catch(e){}
+    },{icon:'\u21BA',okText:'Reset'});
   }
 
   function close(){

@@ -2,7 +2,7 @@
 /*
  * sync-app.js
  *
- * app.html in the PROJECT ROOT is the single source of truth.
+ * temp/app.html is the generated source of truth.
  * This copies it to wherever the platform shell actually loads it from.
  *
  *     node sync-app.js
@@ -17,10 +17,14 @@ var fs = require('fs');
 var path = require('path');
 
 var root = __dirname;
-var src = path.join(root, 'app.html');
+var srcCandidates = [
+  path.join(root, 'temp', 'app.html'),
+  path.join(root, 'app.html')
+];
+var src = srcCandidates.find(function (file) { return fs.existsSync(file); });
 
-if (!fs.existsSync(src)) {
-  console.error('ERROR: app.html not found in the project root:\n  ' + src);
+if (!src) {
+  console.error('ERROR: no app.html source found. Expected:\n  ' + srcCandidates.join('\n  '));
   process.exit(1);
 }
 
