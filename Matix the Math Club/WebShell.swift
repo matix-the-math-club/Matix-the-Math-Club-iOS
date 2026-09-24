@@ -9,6 +9,9 @@ import AppKit
 
 final class ShellCoordinator: NSObject, WKNavigationDelegate, WKUIDelegate {
 
+    // set once the WKWebView exists so native replies (e.g. search results) can be posted back into it
+    weak var webView: WKWebView?
+
     // window.open / target=_blank: keep it in the same view
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
         if let url = navigationAction.request.url {
@@ -111,6 +114,7 @@ func makeShellWebView(coordinator: ShellCoordinator) -> WKWebView {
     let webView = WKWebView(frame: .zero, configuration: config)
     webView.navigationDelegate = coordinator
     webView.uiDelegate = coordinator
+    coordinator.webView = webView
     UNUserNotificationCenter.current().delegate = coordinator
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
     if let url = Bundle.main.url(forResource: "app", withExtension: "html") {
@@ -137,15 +141,50 @@ struct WebShellView: NSViewRepresentable {
 extension ShellCoordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         guard message.name == "matix" else { return }
-        guard let dict = message.body as? [String: Any], (dict["type"] as? String) == "notify" else { return }
-        let title = (dict["title"] as? String) ?? "Matix the Math Club"
-        let body = (dict["body"] as? String) ?? ""
-        let content = UNMutableNotificationContent()
-        content.title = title.isEmpty ? "Matix the Math Club" : title
-        content.body = body
-        content.sound = .default
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
-        UNUserNotificationCenter.current().add(request)
+        guard let dict = message.body as? [String: Any], let type = dict["type"] as? String else { return }
+
+        switch type {
+        case "notify":
+            let title = (dict["title"] as? String) ?? "Matix the Math Club"
+            let body = (dict["body"] as? String) ?? ""
+            let content = UNMutableNotificationContent()
+            content.title = title.isEmpty ? "Matix the Math Club" : title
+            content.body = body
+            content.sound = .default
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+            UNUserNotificationCenter.current().add(request)
+
+        case "search":
+            // native Google-first / DuckDuckGo-fallback web search, bridged back to the AI chat in app.html
+            let query = (dict["query"] as? String) ?? ""
+            let requestId = (dict["requestId"] as? String) ?? ""
+            guard !requestId.isEmpty else { return }
+            Task { [weak self] in
+                let results = await MatixAI.search(query)
+                await self?.postSearchResults(results, requestId: requestId)
+            }
+
+        default:
+            break
+        }
+    }
+
+    @MainActor
+    private func postSearchResults(_ results: [MatixSource], requestId: String) {
+        guard let webView else { return }
+        let payload = results.map { source in
+            [
+                "title": source.title,
+                "url": source.url.absoluteString,
+                "snippet": source.snippet,
+                "provider": source.provider
+            ]
+        }
+        guard let data = try? JSONSerialization.data(withJSONObject: payload),
+              let json = String(data: data, encoding: .utf8) else { return }
+        let escapedId = requestId.replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "'", with: "\\'")
+        let js = "window.__matixSearchCallback && window.__matixSearchCallback('\(escapedId)', \(json));"
+        webView.evaluateJavaScript(js, completionHandler: nil)
     }
 }
 

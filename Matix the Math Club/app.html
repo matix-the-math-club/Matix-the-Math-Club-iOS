@@ -6843,6 +6843,43 @@ function aiModel(){
   return AI_MODEL;
 }
 
+/* ---------- native web search bridge (Swift side: Google first, DuckDuckGo fallback) ---------- */
+var MATIX_SEARCH_CALLBACKS={};
+window.__matixSearchCallback=function(requestId,results){
+  var cb=MATIX_SEARCH_CALLBACKS[requestId];
+  if(!cb)return;
+  delete MATIX_SEARCH_CALLBACKS[requestId];
+  cb(Array.isArray(results)?results:[]);
+};
+function matixNativeSearch(query){
+  return new Promise(function(resolve){
+    var handler=window.webkit&&window.webkit.messageHandlers&&window.webkit.messageHandlers.matix;
+    if(!handler){resolve([]);return;}
+    var requestId='s'+Date.now()+'_'+Math.random().toString(36).slice(2);
+    var done=false;
+    var finish=function(results){if(done)return;done=true;resolve(results||[]);};
+    MATIX_SEARCH_CALLBACKS[requestId]=finish;
+    /* native side races Google first, DuckDuckGo fallback, inside a 2.8s budget \u2014
+       give it a little extra headroom here for the round trip back into JS */
+    setTimeout(function(){delete MATIX_SEARCH_CALLBACKS[requestId];finish([]);},3200);
+    try{handler.postMessage({type:'search',query:String(query||''),requestId:requestId});}
+    catch(e){delete MATIX_SEARCH_CALLBACKS[requestId];finish([]);}
+  });
+}
+function wikiSearch(q){
+  var enc=encodeURIComponent(q);
+  return fetch('https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+enc+'&srlimit=4&srprop=snippet&format=json&origin=*')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var sr=(d.query&&d.query.search)||[];
+      if(!sr.length)return 'No results found for: '+q;
+      return 'Search results for "'+q+'":\n\n'+sr.map(function(item){
+        return item.title+': '+item.snippet.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+      }).join('\n\n');
+    })
+    .catch(function(){return 'Could not reach the search service. Check the internet connection.';});
+}
+
 /* ---------- the things the AI is allowed to do ---------- */
 var AI_TOOLS=[
 {name:'open_chat',risk:'small',owner:false,desc:'Open the Math Chat tab, optionally with one club member.',params:{person:{type:'string',description:'username to open a chat with, e.g. dahlia'}},req:[],run:function(a){openTab({kind:'chat'});if(a.person){var u=String(a.person).toLowerCase().replace(/[^a-z0-9_]/g,'');setTimeout(function(){if(MC.users&&MC.users[u])mcOpen(u);},900);return 'Opened your chat with '+u+'.';}return 'Opened Math Chat.';},say:function(a){return a.person?('Opened your chat with '+String(a.person).toLowerCase()):'Opened Math Chat';}},
@@ -6892,20 +6929,18 @@ var AI_TOOLS=[
    }},
 
   {name:'search_web',risk:'read',owner:false,
-   desc:'Search the internet / Wikipedia for facts, current information, or anything the user asks about.',
+   desc:'Search the internet (Google, falling back to DuckDuckGo, falling back to Wikipedia) for facts, current information, or anything the user asks about.',
    params:{query:{type:'STRING',description:'what to search for, e.g. "Pythagorean theorem" or "latest AI news"'}},req:['query'],
    run:function(a){
-     var q=encodeURIComponent(String(a.query||'').slice(0,200));
-     return fetch('https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+q+'&srlimit=4&srprop=snippet&format=json&origin=*')
-       .then(function(r){return r.json();})
-       .then(function(d){
-         var sr=(d.query&&d.query.search)||[];
-         if(!sr.length)return 'No results found for: '+a.query;
-         return 'Search results for "'+a.query+'":\n\n'+sr.map(function(item){
-           return item.title+': '+item.snippet.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+     var q=String(a.query||'').slice(0,200);
+     return matixNativeSearch(q).then(function(results){
+       if(results&&results.length){
+         return 'Search results for "'+q+'":\n\n'+results.slice(0,6).map(function(r){
+           return r.title+' \u2014 '+r.url+(r.snippet?('\n'+r.snippet):'');
          }).join('\n\n');
-       })
-       .catch(function(){return 'Could not reach the search service. Check the internet connection.';});
+       }
+       return wikiSearch(q);
+     })['catch'](function(){return wikiSearch(q);});
    },
    say:function(a){return 'Searching: '+String(a.query||'');}},
 
@@ -7072,7 +7107,7 @@ function aiSystem(){
   return 'You are Matix AI, the assistant built into the Matix the Math Club app. '
    +'You are talking to '+ME+(isOwner()?' , who is the owner and can do everything.':' , an ordinary member.')+' '
    +'You can actually change the app by calling the tools you have been given \u2014 always DO the task with a tool instead of explaining how to do it. '
-   +'You have a search_web tool that searches Wikipedia \u2014 use it whenever the user asks about facts, current events, or anything you are not sure about. '
+   +'You have a search_web tool that searches the live web (Google, DuckDuckGo, then Wikipedia) \u2014 use it whenever the user asks about facts, current events, or anything you are not sure about. '
    +'You also have add_todo/list_todos/add_note/list_notes tools for the user\u2019s own Private page \u2014 use them whenever they ask you to remember something, keep a list, or take notes for them. '
    +'When asked for a game, write the whole game yourself and call add_game with a complete single-file HTML document: inline CSS and JavaScript, no external files, no libraries, works on a phone and a computer, and it must be a maths game because this is a maths club. '
    +'Never invent a tool that is not in your list. If a tool result starts with ERROR, tell the user plainly what went wrong. '

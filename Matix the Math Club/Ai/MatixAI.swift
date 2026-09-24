@@ -27,8 +27,10 @@ enum MatixAI {
 
         let elapsed = Date().timeIntervalSince(started)
         let remaining = totalBudgetSeconds - elapsed
-        guard remaining > 0 else { return [] }
-        return await withTimeout(seconds: min(remaining, 1.0)) {
+        guard remaining > 0.2 else { return [] }
+        // give DuckDuckGo as much of the leftover budget as the per-request timeout allows,
+        // instead of an arbitrary 1s cap that could cut it off before the network even replies
+        return await withTimeout(seconds: min(remaining, perRequestTimeout)) {
             await duck(cleaned)
         } ?? []
     }
