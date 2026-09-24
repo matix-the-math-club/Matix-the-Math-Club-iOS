@@ -6,38 +6,38 @@
 <title>Matix — Workspace</title>
 <style>
   :root{
-    --bg:#ffffff;--card:#ffffff;--sidebar:#f7f7f5;--sidebar2:#efeeec;--text:#2c2c2b;--muted:#7d7a75;
-    --border:#e6e5e3;--hover:#efedeb;--soft:#f9f8f7;
+      --bg:#f4f6fb;--card:#ffffff;--sidebar:#f7f8fc;--sidebar2:#eef2f8;--text:#1f2430;--muted:#6f7685;
+      --border:#dfe5ef;--hover:#e9eef6;--soft:#f8fafc;
     --brand:#5b46c9;--brand2:#283f71;--accent:#f7a600;--blue:#2783de;--blue-soft:#e5f2fc;
-    --green:#46a171;--red:#e56458;--radius:8px;
-    --shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(0,0,0,.08);
+      --green:#46a171;--red:#e56458;--radius:14px;
+      --shadow:0 10px 30px rgba(24,32,52,.08),0 2px 8px rgba(24,32,52,.04);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top, #f7f9ff 0, #f4f6fb 38%, #eef2f8 100%);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   button{font-family:inherit;cursor:pointer}
   ::selection{background:rgba(91,70,201,.2)}
 
   /* ---------- Sign in ---------- */
   #gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(900px 500px at 15% -10%,#ece8ff,transparent),radial-gradient(800px 500px at 100% 0,#fdeecf,transparent),var(--soft);z-index:200}
-  .gate-card{width:100%;max-width:380px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:34px 30px;box-shadow:var(--shadow);text-align:center;animation:pop .28s ease}
+  .gate-card{width:100%;max-width:380px;background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:24px;padding:34px 30px;box-shadow:0 20px 50px rgba(24,32,52,.12);text-align:center;animation:pop .28s ease;backdrop-filter:blur(16px)}
   @keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .gate-logo{width:56px;height:56px;border-radius:16px;margin:0 auto 14px;background:linear-gradient(135deg,var(--brand2),var(--brand));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.7rem;font-weight:800}
+  .gate-logo{width:56px;height:56px;border-radius:18px;margin:0 auto 14px;background:linear-gradient(135deg,var(--brand2),var(--brand));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.7rem;font-weight:800;box-shadow:0 14px 28px rgba(40,63,113,.18)}
   .gate-card h1{font-size:1.4rem;font-weight:800;margin-bottom:4px}
   .gate-card p{color:var(--muted);font-size:.92rem;margin-bottom:20px}
   .fld{text-align:left;margin-bottom:12px}
   .fld label{display:block;font-size:.8rem;font-weight:700;color:var(--muted);margin-bottom:5px}
   input,textarea,select{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:.95rem;background:#fff;font-family:inherit;color:var(--text)}
   input:focus,textarea:focus,select:focus{outline:none;border-color:var(--brand)}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:none;border-radius:var(--radius);padding:10px 16px;font-size:.92rem;font-weight:700;background:var(--brand);color:#fff;transition:filter .15s,transform .1s}
-  .btn:hover{filter:brightness(1.06)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:none;border-radius:999px;padding:11px 17px;font-size:.92rem;font-weight:700;background:var(--brand);color:#fff;transition:transform .12s,box-shadow .12s,filter .15s;box-shadow:0 10px 24px rgba(91,70,201,.22)}
+  .btn:hover{filter:brightness(1.06);box-shadow:0 14px 30px rgba(91,70,201,.28);transform:translateY(-1px)}
   .btn:active{transform:translateY(1px)}
   .btn:disabled{opacity:.55;cursor:default}
   .btn.block{width:100%}
-  .btn.ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
-  .btn.ghost:hover{background:var(--hover);filter:none}
-  .btn.accent{background:linear-gradient(90deg,var(--accent),#ff8a4c);color:#3a1d00}
+  .btn.ghost{background:rgba(255,255,255,.8);color:var(--text);border:1px solid var(--border);backdrop-filter:blur(12px)}
+  .btn.ghost:hover{background:#fff;filter:none}
+  .btn.accent{background:linear-gradient(135deg,var(--accent),#ff8a4c);color:#3a1d00;box-shadow:0 10px 24px rgba(247,166,0,.22)}
   .btn.sm{padding:6px 11px;font-size:.82rem}
   .btn.danger{background:transparent;color:var(--red);border:1px solid var(--border)}
   .err{color:var(--red);font-size:.83rem;min-height:16px;margin-top:8px;font-weight:600}
@@ -113,14 +113,14 @@
   .hero .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:.04em;margin-bottom:12px}
   .hero h1{font-size:1.9rem;font-weight:800;margin-bottom:8px}
   .hero p{opacity:.94;max-width:560px}
-  .card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:14px;transition:box-shadow .15s}
-  .card.hover:hover{box-shadow:var(--shadow)}
+  .card{background:rgba(255,255,255,.9);border:1px solid var(--border);border-radius:18px;padding:18px 20px;margin-bottom:14px;transition:box-shadow .15s,transform .15s;backdrop-filter:blur(12px)}
+  .card.hover:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
   .callout{display:flex;gap:12px;align-items:flex-start;background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:14px}
   .callout .ci{font-size:1.3rem;flex-shrink:0}
   .callout h3{font-size:1rem;margin-bottom:3px}
   .callout p{color:#565450;font-size:.92rem}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
-  .pcard{border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer;background:#fff;transition:transform .14s,box-shadow .14s;animation:pop .3s ease}
+  .pcard{border:1px solid var(--border);border-radius:18px;overflow:hidden;cursor:pointer;background:rgba(255,255,255,.92);transition:transform .14s,box-shadow .14s;animation:pop .3s ease;backdrop-filter:blur(12px)}
   .pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
   .thumb{width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;font-size:2.6rem;background-size:cover;background-position:center;color:#fff}
   .pcard .meta{padding:11px 13px}
@@ -189,7 +189,7 @@
   /* ---------- Modal ---------- */
   .modal{position:fixed;inset:0;background:rgba(30,30,30,.45);display:none;align-items:center;justify-content:center;padding:16px;z-index:180;backdrop-filter:blur(2px)}
   .modal.open{display:flex}
-  .modal-card{width:100%;max-width:460px;background:#fff;border-radius:16px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.35);animation:pop .2s ease;max-height:90vh;overflow-y:auto}
+  .modal-card{width:100%;max-width:460px;background:rgba(255,255,255,.94);border-radius:22px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.22);animation:pop .2s ease;max-height:90vh;overflow-y:auto;backdrop-filter:blur(16px)}
   .modal-card h2{font-size:1.25rem;font-weight:800;margin-bottom:4px}
   .modal-card .mh-sub{color:var(--muted);font-size:.9rem;margin-bottom:8px}
   .modal-x{float:right;border:none;background:transparent;font-size:1.4rem;color:var(--muted);line-height:1}
@@ -478,7 +478,7 @@ body.dark .tb-tabs .tab-add{color:var(--muted)}
 .tabstrip{display:none}
 #tbReload .sp{display:inline-block;transition:transform .5s ease}
 #tbReload.spin .sp{transform:rotate(360deg)}
-.tb-panel{position:fixed;top:44px;left:10px;width:262px;background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.28);padding:15px;z-index:700;display:none}
+.tb-panel{position:fixed;top:44px;left:10px;width:262px;background:rgba(255,255,255,.9);color:var(--text);border:1px solid var(--border);border-radius:20px;box-shadow:0 24px 64px rgba(24,32,52,.18);padding:15px;z-index:700;display:none;backdrop-filter:blur(16px)}
 .tb-panel.open{display:block}
 .tb-panel h4{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800;margin:0 0 8px}
 .tb-modes{display:flex;gap:7px;margin-bottom:15px}
@@ -1525,7 +1525,11 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 #mxBoot{position:fixed;inset:0;z-index:99999;display:flex;
   align-items:center;justify-content:center;text-align:center;padding:24px;
   overflow:hidden;
-  background:var(--mxa-canvas,#0b0b0c);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(62,233,143,.12), transparent 22%),
+    radial-gradient(circle at 18% 18%, rgba(139,92,246,.16), transparent 28%),
+    radial-gradient(circle at 82% 78%, rgba(56,189,248,.14), transparent 26%),
+    var(--mxa-canvas,#0b0b0c);
   background-image:radial-gradient(var(--mxa-dot,rgba(255,255,255,.075)) 1px,transparent 1px);
   background-size:22px 22px;
   color:var(--mxa-ink,#fff);
@@ -1534,7 +1538,8 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 @keyframes lgPulse{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
 #mxBoot .mxb-blob{position:absolute;left:50%;top:52%;width:62vmax;height:62vmax;
   border-radius:46% 54% 58% 42%/48% 44% 56% 52%;
-  background:var(--mxa-accent,#3ee98f);filter:blur(4px);
+  background:conic-gradient(from 180deg, rgba(62,233,143,.24), rgba(56,189,248,.22), rgba(139,92,246,.2), rgba(62,233,143,.24));
+  filter:blur(12px);
   transform:translate(-50%,-50%) scale(.15);opacity:0;
   animation:mxbBlob 2.8s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes mxbBlob{
@@ -1543,7 +1548,7 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
   100%{transform:translate(-53%,-50%) scale(1) rotate(26deg);opacity:.15}}
 #mxBoot .mxb-collage{position:absolute;inset:0;pointer-events:none}
 #mxBoot .mxb-tile{position:absolute;display:block;border-radius:16px;
-  background:var(--mxa-panel,#15151a);
+  background:linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
   border:1px solid var(--mxa-line,rgba(255,255,255,.13));
   box-shadow:0 20px 54px rgba(0,0,0,.30);
   opacity:0;animation:mxbTile 1s cubic-bezier(.2,.8,.2,1) forwards}
@@ -1556,7 +1561,9 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
 @keyframes mxbTile{from{opacity:0}to{opacity:.9}}
 @media(max-width:820px){#mxBoot .mxb-tile.b3,#mxBoot .mxb-tile.b6{display:none}
   #mxBoot .mxb-tile{width:96px !important;height:124px !important}}
-#mxBoot .mxb-hero{position:relative;z-index:3}
+#mxBoot .mxb-hero{position:relative;z-index:3;max-width:min(720px,92vw);padding:18px 22px 26px;border-radius:28px;
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px);box-shadow:0 24px 70px rgba(0,0,0,.22)}
 #mxBootWord{display:flex;justify-content:center;font-size:clamp(3rem,12.5vw,6.6rem);
   font-weight:400;letter-spacing:-.035em;line-height:1;color:var(--mxa-ink,#fff);background:none}
 #mxBootWord span{display:inline-block;opacity:0;filter:blur(7px);
@@ -1564,11 +1571,12 @@ html.mx-booting #titlebar,html.mx-booting #app,html.mx-booting #gate{visibility:
   animation:mxbLetter .8s cubic-bezier(.2,.85,.2,1) forwards}
 #mxBootWord span.sp{width:.3em}
 @keyframes mxbLetter{to{opacity:1;filter:blur(0);transform:none}}
-#mxBootTag{margin-top:20px;color:var(--mxa-dim,rgba(255,255,255,.66));font-size:1rem;
+#mxBootTag{margin-top:20px;color:var(--mxa-dim,rgba(255,255,255,.8));font-size:1rem;
   font-weight:400;min-height:24px;opacity:0;animation:mxbFade .7s .46s ease forwards}
 #mxBoot .mxb-cta{display:inline-flex;align-items:center;justify-content:center;
   margin-top:22px;padding:13px 32px;border-radius:999px;font-size:.99rem;font-weight:500;
-  background:var(--mxa-btn,#f4f0e7);color:var(--mxa-btn-ink,#0b0b0c);
+  background:linear-gradient(135deg, rgba(62,233,143,.96), rgba(56,189,248,.96));
+  color:var(--mxa-btn-ink,#0b0b0c);
   opacity:0;animation:mxbFade .7s .62s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes mxbFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 #mxBootTrack{margin:26px auto 0;width:min(300px,74vw);height:6px;border-radius:999px;
@@ -1588,8 +1596,8 @@ body.reduce-motion #mxBootWord span{animation:none;opacity:1;filter:none;transfo
 #gate.lg-snap{scrollbar-width:none}
 
 #gate #gateWelcome{display:block;position:relative;min-height:100%;padding:0}
-#gate #gateWelcome .gate-welcome-inner{display:block;width:100%;max-width:none;
-  margin:0;padding:0;text-align:center}
+#gate #gateWelcome .gate-welcome-inner{display:block;width:100%;max-width:980px;
+  margin:0 auto;padding:clamp(28px,4vw,52px) 18px 26px;text-align:center}
 /* the old blanket stagger would animate whole sections — handled per-section now */
 #gate .lb-stagger>*{animation:none !important;opacity:1}
 
@@ -1617,7 +1625,7 @@ body.reduce-motion #mxBootWord span{animation:none;opacity:1;filter:none;transfo
 @keyframes lgBob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 
 /* --- decorative tilted collage --- */
-#gate .lg-collage{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:1}
+#gate .lg-collage{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:1;filter:saturate(1.05)}
 #gate .lg-tile{position:absolute;border-radius:16px;filter:blur(1px);opacity:.5;
   box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.07)}
 #gate .lg-tile.t1{left:-4%;top:11%;width:290px;height:180px;transform:rotate(-8deg);
@@ -1637,7 +1645,7 @@ body.reduce-motion #mxBootWord span{animation:none;opacity:1;filter:none;transfo
 /* liquid blob wipe between featured slides (labs.google transition) */
 #gate .lg-blob{position:fixed;left:50%;top:50%;width:52vmax;height:52vmax;z-index:1;
   margin:-26vmax 0 0 -26vmax;pointer-events:none;opacity:0;
-  background:radial-gradient(circle at 38% 38%,rgba(201,211,86,.5),rgba(62,233,143,.22) 55%,transparent 72%);
+  background:radial-gradient(circle at 38% 38%,rgba(201,211,86,.55),rgba(62,233,143,.26) 55%,transparent 72%);
   border-radius:46% 54% 58% 42%/52% 44% 56% 48%}
 #gate .lg-blob.go{animation:lgBlob 1s cubic-bezier(.3,.7,.3,1) both}
 @keyframes lgBlob{
@@ -1831,27 +1839,27 @@ body.reduce-motion #mxBootWord span{animation:none;opacity:1;filter:none;transfo
 
 /* ============================ OWNER CONTENT EDITOR ============================ */
 .mxsc-wrap{display:flex;flex-direction:column;gap:13px}
-.mxsc-card{border:1px solid rgba(0,0,0,.1);border-radius:14px;padding:14px;background:rgba(0,0,0,.02)}
+.mxsc-card{border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:14px;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);box-shadow:0 10px 24px rgba(24,32,52,.05)}
 .mxsc-hd{display:flex;align-items:center;justify-content:space-between;font-weight:700;
   font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;opacity:.62;margin-bottom:10px}
 .mxsc-row{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
 .mxsc-row label{font-size:.79rem;font-weight:600;opacity:.7}
-.mxsc-row input,.mxsc-row textarea{width:100%;box-sizing:border-box;border:1px solid rgba(0,0,0,.16);
-  border-radius:10px;padding:10px 12px;font:inherit;font-size:.94rem;background:#fff;color:#111}
+.mxsc-row input,.mxsc-row textarea{width:100%;box-sizing:border-box;border:1px solid rgba(0,0,0,.12);
+  border-radius:12px;padding:10px 12px;font:inherit;font-size:.94rem;background:#fff;color:#111;box-shadow:inset 0 1px 2px rgba(0,0,0,.03)}
 .mxsc-row textarea{min-height:66px;resize:vertical}
 .mxsc-grid{display:grid;grid-template-columns:74px 1fr;gap:10px}
 .mxsc-grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .mxsc-del{background:transparent;border:0;color:#c0392b;font-size:.82rem;font-weight:600;
   cursor:pointer;padding:3px 5px;font-family:inherit}
-.mxsc-add{background:#f0f0f2;border:0;border-radius:10px;padding:11px;font-weight:600;
-  cursor:pointer;font:inherit;width:100%}
+.mxsc-add{background:linear-gradient(135deg,#ffffff,#eef3ff);border:1px solid var(--border);border-radius:999px;padding:11px;font-weight:700;
+  cursor:pointer;font:inherit;width:100%;box-shadow:0 10px 20px rgba(24,32,52,.05)}
 .mxsc-add:disabled{opacity:.45;cursor:not-allowed}
 .mxsc-err{font-size:.89rem;min-height:18px;color:#c0392b}
 .mxsc-err.ok{color:#0a6b3f}
 .mxsc-foot{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
-.mxsc-btn{border-radius:999px;padding:11px 24px;font-weight:600;cursor:pointer;font:inherit;border:0}
-.mxsc-btn.ghost{background:none;border:1px solid #ddd}
-.mxsc-btn.dark{background:#0b0b0c;color:#fff}
+.mxsc-btn{border-radius:999px;padding:11px 24px;font-weight:700;cursor:pointer;font:inherit;border:0;transition:transform .12s,box-shadow .12s}
+.mxsc-btn.ghost{background:rgba(255,255,255,.78);border:1px solid var(--border)}
+.mxsc-btn.dark{background:linear-gradient(135deg,var(--brand2),var(--brand));color:#fff;box-shadow:0 12px 26px rgba(40,63,113,.22)}
 .mxsc-btn.green{background:#3ee98f;color:#08130d}
 .mxsc-btn:disabled{opacity:.55;cursor:progress}
 
@@ -2336,6 +2344,11 @@ body.dark{--mxa-dot:rgba(255,255,255,.075)}
         <div class="gate-goal"><div class="gi">🦉</div><b>Learn anything</b><span>AI lessons explain math from zero, with quizzes that check your understanding.</span></div>
         <div class="gate-goal"><div class="gi">🎮</div><b>Play &amp; create</b><span>Try club games or publish your own — a creative way to practice math.</span></div>
         <div class="gate-goal"><div class="gi">✨</div><b>Club community</b><span>Share ideas, earn points, chat with friends, and shape what Matix builds next.</span></div>
+      </div>
+      <div class="gate-goals" style="margin-top:16px">
+        <div class="gate-goal"><div class="gi">⚡</div><b>Fast start</b><span>The boot screen stays light, then hands off to the app in one smooth fade.</span></div>
+        <div class="gate-goal"><div class="gi">🎨</div><b>Cleaner editor</b><span>The site editor keeps your draft safe and can reset to a fresh default.</span></div>
+        <div class="gate-goal"><div class="gi">🔎</div><b>Better AI search</b><span>Matix AI now tries Google first, then falls back only when it has to.</span></div>
       </div>
       <button type="button" class="gate-continue" id="gContinue">Continue → Sign in</button>
       <div class="gate-free-badge">100% free · forever</div>
